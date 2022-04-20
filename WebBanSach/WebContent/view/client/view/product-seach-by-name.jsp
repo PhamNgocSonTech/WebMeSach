@@ -61,14 +61,14 @@
 		<!--=== Breadcrumbs v4 ===-->
 		<div class="breadcrumbs-v4">
 			<div class="container">
-				<span class="page-name">Product  Page</span>
+				<span class="page-name">Tìm kiếm sản phẩm</span>
 				<h1>
-					Maecenas <span class="shop-green">enim</span> sapien
+					TÌM KIẾM <span class="shop-green">SẢN PHẨM</span> THEO TÊN
 				</h1>
 				<ul class="breadcrumb-v4-in">
-					<li><a href="${pageContext.request.contextPath }">Home</a></li>
-					<li><a href="${pageContext.request.contextPath }/product/list">Product</a></li>
-					<li class="active">List Product</li>
+					<li><a href="${pageContext.request.contextPath }">Trang chủ</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/list">Sản phẩm</a></li>
+					<li class="active">Danh sách sản phẩm</li>
 				</ul>
 			</div>
 			<!--/end container-->
@@ -92,29 +92,29 @@
 									<a href="shop-ui-filter-grid.html"><i class="fa fa-th"></i></a>
 								</li>
 								<li class="sort-list-btn">
-									<h3>Sort By :</h3>
+									<h3>Sắp xếp theo :</h3>
 									<div class="btn-group">
 										<button type="button" class="btn btn-default dropdown-toggle"
 											data-toggle="dropdown">
-											Popularity <span class="caret"></span>
+											Phổ biến nhất <span class="caret"></span>
 										</button>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">All</a></li>
-											<li><a href="#">Best Sales</a></li>
-											<li><a href="#">Top Last Week Sales</a></li>
-											<li><a href="#">New Arrived</a></li>
+											<li><a href="#">Tất cả</a></li>
+											<li><a href="#">Gía tốt nhất</a></li>
+											<li><a href="#">Top sale cuối tuần</a></li>
+											<li><a href="#">Hàng mới về</a></li>
 										</ul>
 									</div>
 								</li>
 								<li class="sort-list-btn">
-									<h3>Show :</h3>
+									<h3>Hiện :</h3>
 									<div class="btn-group">
 										<button type="button" class="btn btn-default dropdown-toggle"
 											data-toggle="dropdown">
 											20 <span class="caret"></span>
 										</button>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">All</a></li>
+											<li><a href="#">Tất cả</a></li>
 											<li><a href="#">10</a></li>
 											<li><a href="#">5</a></li>
 											<li><a href="#">3</a></li>
@@ -168,12 +168,11 @@
 										
 										<ul class="list-inline add-to-wishlist margin-bottom-20">
 											<li class="wishlist-in"><i class="fa fa-heart"></i> <a
-												href=""${pageContext.request.contextPath }/product/detail?id=${p.id}"">Add to Wishlist</a></li>
+												href=""${pageContext.request.contextPath }/product/detail?id=${p.id}"">Thêm vào mục yêu thích</a></li>
 											<li class="compare-in"><i class="fa fa-exchange"></i> <a
-												href=""${pageContext.request.contextPath }/product/detail?id=${p.id}"">Add to Compare</a></li>
+												href=""${pageContext.request.contextPath }/product/detail?id=${p.id}"">Thêm để so sánh</a></li>
 										</ul>
-										<a href="${pageContext.request.contextPath }/product/detail?id=${p.id}" ><button type="button" class="btn-u btn-u-sea-shop">Add
-											to Cart</button></a>
+										<a href="${pageContext.request.contextPath }/product/detail?id=${p.id}" ><button type="button" class="btn-u btn-u-sea-shop">Thêm vào giỏ hàng</button></a>
 									</div>
 									
 									
@@ -210,7 +209,7 @@
 				<div class="row">
 					<div class="col-md-8 md-margin-bottom-20">
 						<h2>
-							subscribe to our weekly <strong>newsletter</strong>
+							ĐĂNG KÝ ĐỂ NHẬN <strong>TIN TỨC MỚI NHẤT</strong>
 						</h2>
 					</div>
 					<div class="col-md-4">

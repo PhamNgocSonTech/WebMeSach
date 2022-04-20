@@ -13,7 +13,7 @@ public class JDBCConnection {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			String user = "sa";
-			String pass = "sa123";
+			String pass = "123456789";
 			String url = "jdbc:sqlserver://localhost:1433;databaseName=BookManagement";
 			connection = DriverManager.getConnection(url, user, pass);
 			System.out.println("Success Connect Database");
