@@ -1,0 +1,150 @@
+USE [BookManagement]
+GO
+/****** Object:  Table [dbo].[Cart]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cart](
+	[id] [varchar](50) NOT NULL,
+	[u_id] [int] NOT NULL,
+	[buyDate] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CartItem]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CartItem](
+	[id] [varchar](50) NOT NULL,
+	[quantity] [int] NULL,
+	[unitPrice] [float] NULL,
+	[pro_id] [int] NOT NULL,
+	[cat_id] [varchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Category]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Category](
+	[cate_id] [int] IDENTITY(1,1) NOT NULL,
+	[cate_name] [nvarchar](255) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[cate_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Product]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](100) NOT NULL,
+	[price] [float] NOT NULL,
+	[cate_id] [int] NOT NULL,
+	[des] [nvarchar](4000) NULL,
+	[image] [varchar](50) NULL,
+	[author] [nvarchar](20) NOT NULL,
+	[publisher_id] [int] NOT NULL,
+	[size] [nvarchar](15) NOT NULL,
+	[embedCode] [nvarchar](50) NULL,
+ CONSTRAINT [PK__Product__3213E83FCC3D24D7] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Publisher]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Publisher](
+	[publisher_id] [int] IDENTITY(1,1) NOT NULL,
+	[publisher_name] [nchar](10) NOT NULL,
+ CONSTRAINT [PK_Publisher] PRIMARY KEY CLUSTERED 
+(
+	[publisher_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Role]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Role](
+	[role_id] [int] IDENTITY(1,1) NOT NULL,
+	[role_name] [nvarchar](10) NOT NULL,
+ CONSTRAINT [PK_Role] PRIMARY KEY CLUSTERED 
+(
+	[role_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 4/21/2022 9:47:34 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[email] [varchar](50) NOT NULL,
+	[username] [varchar](50) NOT NULL,
+	[password] [varchar](36) NOT NULL,
+	[avatar] [varchar](50) NULL,
+	[role_id] [int] NOT NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[address] [nvarchar](50) NULL,
+ CONSTRAINT [PK__User__3213E83F3169C064] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__User__F3DBC5721CBFD00D] UNIQUE NONCLUSTERED 
+(
+	[username] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Cart]  WITH CHECK ADD  CONSTRAINT [FK__Cart__u_id__2C3393D0] FOREIGN KEY([u_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Cart] CHECK CONSTRAINT [FK__Cart__u_id__2C3393D0]
+GO
+ALTER TABLE [dbo].[CartItem]  WITH CHECK ADD FOREIGN KEY([cat_id])
+REFERENCES [dbo].[Cart] ([id])
+GO
+ALTER TABLE [dbo].[CartItem]  WITH CHECK ADD  CONSTRAINT [FK__CartItem__pro_id__2F10007B] FOREIGN KEY([pro_id])
+REFERENCES [dbo].[Product] ([id])
+GO
+ALTER TABLE [dbo].[CartItem] CHECK CONSTRAINT [FK__CartItem__pro_id__2F10007B]
+GO
+ALTER TABLE [dbo].[Product]  WITH CHECK ADD  CONSTRAINT [FK__Product__cate_id__29572725] FOREIGN KEY([cate_id])
+REFERENCES [dbo].[Category] ([cate_id])
+GO
+ALTER TABLE [dbo].[Product] CHECK CONSTRAINT [FK__Product__cate_id__29572725]
+GO
+ALTER TABLE [dbo].[Product]  WITH CHECK ADD  CONSTRAINT [FK_Product_Publisher] FOREIGN KEY([publisher_id])
+REFERENCES [dbo].[Publisher] ([publisher_id])
+GO
+ALTER TABLE [dbo].[Product] CHECK CONSTRAINT [FK_Product_Publisher]
+GO
+ALTER TABLE [dbo].[User]  WITH CHECK ADD  CONSTRAINT [FK_User_Role] FOREIGN KEY([role_id])
+REFERENCES [dbo].[Role] ([role_id])
+GO
+ALTER TABLE [dbo].[User] CHECK CONSTRAINT [FK_User_Role]
+GO
