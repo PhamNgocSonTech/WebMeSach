@@ -104,8 +104,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7 md-margin-bottom-50">
-						<h2 class="welcome-title">Chào mừng đến với Thegioisach.com</h2>
-						<p>Thegioisach.com luôn đảm bảo mang lại những đầu sách mới nhất cho bạn</p>
+						<h2 class="welcome-title">Chào mừng đến với Mesach.com</h2>
+						<p>Mesach.com luôn đảm bảo mang lại những đầu sách mới nhất cho bạn</p>
 						<br>
 						<div class="info-block-v2">
 							<i class="icon icon-layers"></i>
@@ -206,13 +206,13 @@
 				<div class="row">
 					<div class="col-md-8 md-margin-bottom-20">
 						<h2>
-							subscribe to our weekly <strong>newsletter</strong>
+							ĐĂNG KÝ ĐỂ NHẬN <strong>THÔNG TIN MỚI NHẤT</strong>
 						</h2>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
 							<input type="text" class="form-control"
-								placeholder="Email your email..."> <span
+								placeholder="Email của bạn..."> <span
 								class="input-group-btn">
 								<button class="btn" type="button">
 									<i class="fa fa-envelope-o"></i>
