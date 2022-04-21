@@ -6,6 +6,7 @@ import com.book.model.Cart;
 import com.book.model.Category;
 
 public interface CartDao {
+	
 	void insert(Cart cart);
 
 	void edit(Cart cart);

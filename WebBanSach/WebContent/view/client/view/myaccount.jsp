@@ -15,7 +15,6 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<
 <script type="text/javascript">
 <!--
 	$(document).ready(function() {
@@ -76,7 +75,8 @@
 					<input name="role" value="${sessionScope.account.roleId }" hidden="" >
 					<input name="id" value="${sessionScope.account.id }" hidden="">
 					<div class="text-center">
-						<c:url value="/view/client/static/img/${sessionScope.account.avatar}"
+
+						<c:url value="/view/client/static/img/clients/${sessionScope.account.avatar}"
 							var="imgUrl"></c:url>
 						<img src="${imgUrl }" class="avatar img-circle img-thumbnail"
 							alt="avatar">
@@ -94,6 +94,16 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<hr>
+						
+						<div class="form-group">
+
+							<div class="col-xs-6">
+								<label for="first_name"><h4>Họ và tên:</h4></label> <input
+									type="text" class="form-control" name="username"
+									id="first_name" value="${sessionScope.account.name }"
+									title="enter your first name if any.">
+							</div>
+						</div>
 
 						<div class="form-group">
 

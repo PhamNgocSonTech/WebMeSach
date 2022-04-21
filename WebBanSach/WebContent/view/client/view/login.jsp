@@ -134,14 +134,14 @@
 						<form id="sky-form1" class="log-reg-block sky-form" action="login"
 							method="post">
 							<h2>Đăng nhập vào tài khoản của bạn</h2>
-							<h3>${alertMsg }</h3>
+							<h5 style="text-align: center; color: green;" >${alert}</h5>
 
 
 							<section>
 								<label class="input login-input">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fa fa-user"></i></span>
-										<input type="text" placeholder="User name" name="username"
+										<input type="text" placeholder="User name" name="username" required="required"
 											class="form-control">
 									</div>
 								</label>
@@ -190,6 +190,7 @@
 						<p class="text-center">
 							Bạn chưa có tài khoản? Hãy <a
 								href="${pageContext.request.contextPath }/register">Đăng ký ngay</a>
+								
 						</p>
 					</div>
 				</div>

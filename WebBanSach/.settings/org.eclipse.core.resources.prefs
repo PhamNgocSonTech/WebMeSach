@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/view/admin/view/create-product.jsp=UTF-8
 encoding//WebContent/view/admin/view/index.jsp=UTF-8
 encoding//WebContent/view/client/view/cart.jsp=UTF-8
 encoding//WebContent/view/client/view/footer.jsp=UTF-8
@@ -6,5 +7,11 @@ encoding//WebContent/view/client/view/myaccount.jsp=UTF-8
 encoding//WebContent/view/client/view/navbar.jsp=UTF-8
 encoding//WebContent/view/client/view/seach.jsp=UTF-8
 encoding//WebContent/view/client/view/topbar.jsp=UTF-8
+encoding//src/com/book/controller/RegisterController.java=UTF-8
+encoding//src/com/book/controller/admin/DashboardController.java=UTF-8
+encoding//src/com/book/controller/admin/ProductAddController.java=UTF-8
 encoding//src/com/book/controller/admin/ProductListController.java=UTF-8
+encoding//src/com/book/dao/impl/ProductDaoImpl.java=UTF-8
+encoding//src/com/book/tools/SendMail.java=UTF-8
 encoding/<project>=UTF-8
+separateDerivedEncodings=true

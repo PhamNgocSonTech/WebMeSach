@@ -134,7 +134,7 @@
 							<div class="row">
 							
 								<div class="col-sm-4">
-								<c:url value="/view/client/static/img/${p.image}" var="imgUrl"></c:url>
+								<c:url value="/view/client/static/img/book-img/${p.image}" var="imgUrl"></c:url>
 									<a href="${pageContext.request.contextPath }/product/detail?id=${p.id}"><img
 										class="img-responsive sm-margin-bottom-20"
 										src="${imgUrl}" alt=""></a>
@@ -164,7 +164,7 @@
 												class="title-price line-through">$ ${p.price *1.25 }</span>
 											
 										</div>
-										<p class="margin-bottom-20">${p.des }</p>
+										<p class="margin-bottom-20">${p.author }</p>
 										
 										<ul class="list-inline add-to-wishlist margin-bottom-20">
 											<li class="wishlist-in"><i class="fa fa-heart"></i> <a

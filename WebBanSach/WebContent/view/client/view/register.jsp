@@ -134,28 +134,34 @@
 					<div class="col-md-5">
 						<form id="sky-form4" class="log-reg-block sky-form"
 							action="register" method="post">
-							<h2>Tạo tài khoản mới</h2>
+							<h2>Tạo tài khoản mới</h2> <br/>
+							<h4 style="text-align: center; color: red">${alert}</h4>
 
 							<div class="login-input reg-input">
 								<section>
 									<label class="input"> <input type="text"
-										name="username" placeholder="Username" class="form-control">
+										name="name" placeholder="Họ và tên" class="form-control" required="required">
 									</label>
 								</section>
 								<section>
 									<label class="input"> <input type="email" name="email"
-										placeholder="Email address" class="form-control">
+										placeholder="Địa chỉ email" class="form-control">
+									</label>
+								</section>
+								<section>
+									<label class="input"> <input type="text"
+										name="username" placeholder="Tên đăng nhập" class="form-control">
 									</label>
 								</section>
 								<section>
 									<label class="input"> <input type="password"
-										name="password" placeholder="Password" id="password"
+										name="password" placeholder="Mật khẩu" id="password"
 										class="form-control">
 									</label>
 								</section>
 								<section>
 									<label class="input"> <input type="password"
-										name="passwordConfirm" placeholder="Confirm password"
+										name="passwordConfirm" placeholder="Nhập lại mật khẩu"
 										class="form-control">
 									</label>
 								</section>

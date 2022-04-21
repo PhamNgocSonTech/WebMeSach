@@ -70,7 +70,7 @@
 											<c:forEach items="${userList }" var="list">
 												<tr class="odd gradeX">
 													<td>${list.id }</td>
-													<c:url value="/image?fname=${list.avatar }" var="imgUrl"></c:url>
+													<c:url value="/view/client/static/img/clients/${list.avatar }" var="imgUrl"></c:url>
 													<td><img height="70" width="90" src="${imgUrl}" /></td>
 													<td>${list.email }</td>
 													<td>${list.username }</td>

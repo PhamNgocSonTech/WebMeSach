@@ -268,7 +268,7 @@
 				<ul class="list-inline owl-slider">
 
 					<c:forEach items="${pwelcome }" var="p">
-						<c:url value="/view/client/static/img/${p.image}" var="imgUrl"></c:url>
+						<c:url value="/view/client/static/img/book-img/${p.image}" var="imgUrl"></c:url>
 						
 						<li class="item">
 							<div class="product-img">
@@ -287,7 +287,7 @@
 									<div class="pull-left">${p.name }</a>
 										</h4>
 										<span class="gender text-uppercase">${p.category.name }</span>
-										<span class="gender">best selling</span>
+										<span class="gender">${p.author}</span>
 									</div>
 									<div class="product-price">
 										<span class="title-price">$ ${p.price }</span>
@@ -322,7 +322,7 @@
 			<div class="row illustration-v2">
 
 				<c:forEach items="${pwelcome}" var="p">
-					<c:url value="/view/client/static/img/${p.image}" var="imgUrl"></c:url> 
+					<c:url value="/view/client/static/img/book-img/${p.image}" var="imgUrl"></c:url> 
 
 					<div class="col-md-3 col-sm-6 md-margin-bottom-30">
 						<div class="product-img">
@@ -345,7 +345,7 @@
 
 									</h4>
 									<span class="gender text-uppercase">${p.category.name }</span>
-									<span class="gender">${p.des }</span>
+									<span class="gender">${p.author }</span>
 
 								</div>
 								<div class="product-price">
@@ -701,28 +701,28 @@
 
 			<ul class="list-inline owl-slider-v2">
 				<li class="item first-child"><img
-					src="${url}/img/clients/07.png" alt=""></li>
-				<li class="item"><img src="${url}/img/clients/08.png" alt="">
+					src="${url}/img/publisher/kim-dong.jpg" alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/10.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/nha-nam.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/11.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/09.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/thaiha.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/12.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/dong-a.jpg" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/07.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/08.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/dinh-ty.jpg" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/09.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/thaiha.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/10.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/nha-nam.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/11.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
 				</li>
-				<li class="item"><img src="${url}/img/clients/12.png" alt="">
+				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg" alt="">
 				</li>
 			</ul>
 			<!--/end owl-carousel-->

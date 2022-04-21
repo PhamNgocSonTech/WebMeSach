@@ -50,7 +50,7 @@ public class SendMail {
 	        message.setFrom(new InternetAddress("hc19082001@gmail.com"));
 	        message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 	        message.setSubject(sub);
-	        message.setContent(msg, "text/html");
+	        message.setContent(msg, "text/html;charset=UTF-8");
 
 	        /* Transport class is used to deliver the message to the recipients */
 	        Transport.send(message);

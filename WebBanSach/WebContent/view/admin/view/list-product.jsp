@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Product Management</title>
 <!-- BOOTSTRAP STYLES-->
@@ -48,45 +48,52 @@
 						<!-- Advanced Tables -->
 						<div class="panel panel-default">
 							<div class="panel-heading">Advanced Tables</div>
+							<a href="${pageContext.request.contextPath }/admin/product/add"
+								class="btn btn-primary btn-block text-uppercase mb-3"
+								style="width: 170px; margin: 10px 10px 0 10px;">Thêm sản
+								phẩm mới</a>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
 										id="dataTables-example">
 										<thead>
 											<tr>
-												<th>ID </th>
-												<th>Image</th>
-												<th>Name</th>
-												<th>Price($)</th>
-												<th>Category</th>
-												<th>Description</th>
-												<th>Action </th>
+												<th>ID</th>
+												<th>Hình Ảnh</th>
+												<th>Tên</th>
+												<th>Tác giả</th>
+												<th>Giá tiền</th>
+												<th>Thể Loại</th>
+												<th>Nhà xuất bản</th>
+												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
-										<c:forEach items="${proList }" var="pro" >
-											<tr class="odd gradeX">
-												<td>${pro.id }</td>
-													<c:url value="/view/client/static/img/${pro.image}" var="imgUrl"></c:url>
+											<c:forEach items="${proList }" var="pro">
+												<tr class="odd gradeX">
+													<td>${pro.id }</td>
+													<c:url
+														value="/view/client/static/img/book-img/${pro.image}"
+														var="imgUrl"></c:url>
 													<td><img height="200" width="200" src="${imgUrl}" /></td>
 
 													<td>${pro.name }</td>
-												<td>${pro.price }</td>
-												<td>${pro.category.name }</td>
-												<td>${pro.des } </td>
-												<td><a
+													<td>${pro.author }</td>
+													<td>${pro.price }</td>
+													<td>${pro.category.name }</td>
+													<td>${pro.publisher.publisher_name }</td>
+													<td><a
 														href="<c:url value='/product/detail?id=${pro.id }'/>"
 														class="center">Detail</a> | <a
 														href="<c:url value='/admin/product/edit?id=${pro.id }'/>"
-														class="center">Edit</a>
-														| <a
+														class="center">Edit</a> | <a
 														href="<c:url value='/admin/product/delete?id=${pro.id }'/>"
 														class="center">Delete</a></td>
-												
-											</tr>
+
+												</tr>
 											</c:forEach>
-											
-											
+
+
 										</tbody>
 									</table>
 								</div>

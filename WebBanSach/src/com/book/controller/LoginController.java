@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
 
 		HttpSession session = req.getSession(false);
 		if (session != null && session.getAttribute("account") != null) {
-			resp.sendRedirect(req.getContextPath()+ "/waiting");
+			resp.sendRedirect(req.getContextPath()+ "/waiting1");
 			return;
 		}
 		// Check cookie
@@ -40,6 +40,7 @@ public class LoginController extends HttpServlet {
 
 		req.getRequestDispatcher("view/client/view/login.jsp").forward(req, resp);
 	}
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		  String username = req.getParameter("username");
@@ -53,13 +54,6 @@ public class LoginController extends HttpServlet {
 	            isRememberMe = true;
 	        }
 	        String alertMsg="";
-	        
-	        if(username.isEmpty() || password.isEmpty()){
-	            alertMsg = "Username and password can't be empty!";
-	            req.setAttribute("alert", alertMsg);
-	            req.getRequestDispatcher("/view/client/view/login.jsp").forward(req, resp);
-	            return;
-	        }
 	      
 	        UserService service = new UserServiceImpl();
 	        
@@ -75,8 +69,9 @@ public class LoginController extends HttpServlet {
 	            }
 	           
 	            resp.sendRedirect(req.getContextPath()+"/waiting");
+
 	        }else{
-	            alertMsg = "Username or password isn't correct";
+	            alertMsg = "Tên đăng nhập hoặc mật khẩu không hợp lệ !!";
 	            req.setAttribute("alert", alertMsg);
 	            req.getRequestDispatcher("/view/client/view/login.jsp").forward(req, resp);
 	        }

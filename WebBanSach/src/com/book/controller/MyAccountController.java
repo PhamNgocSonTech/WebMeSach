@@ -46,6 +46,8 @@ public class MyAccountController extends HttpServlet {
 					user.setId(Integer.parseInt(item.getString()));
 				} else if (item.getFieldName().equals("email")) {
 					user.setEmail(item.getString());
+				} else if (item.getFieldName().equals("name")) {
+					user.setName(item.getString());
 				} else if (item.getFieldName().equals("username")) {
 					user.setUsername(item.getString());
 				} else if (item.getFieldName().equals("password")) {

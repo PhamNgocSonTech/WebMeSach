@@ -15,8 +15,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 
 	@Override
 	public void insert(User user) {
-		int roleId=0;
-		String sql = "INSERT INTO [User](email, username, password,avatar,role_id) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO [User](email, username, password,avatar,role_id, name, address) VALUES (?,?,?,?,?,?,?)";
 		Connection con = super.getJDBCConnection();
 
 		try {
@@ -25,18 +24,9 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 			ps.setString(2, user.getUsername());
 			ps.setString(3, user.getPassword());
 			ps.setString(4, user.getAvatar());
-			try {
-				if(user.getRoleId()==1) {
-					roleId=1;
-				}else {
-					roleId=2;
-				}
-
-			} catch (Exception e) {
-				roleId=2;
-			}
-			ps.setInt(5, roleId);
-			;
+			ps.setInt(5, user.getRoleId());
+			ps.setString(6, user.getName());
+			ps.setString(7, user.getAddress());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -96,6 +86,8 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 				user.setUsername(rs.getString("username"));
 				user.setPassword(rs.getString("password"));
 				user.setAvatar(rs.getString("avatar"));
+				user.setName(rs.getString("name"));
+				user.setAddress(rs.getString("address"));
 				user.setRoleId(Integer.parseInt(rs.getString("role_id")));
 
 				return user;
@@ -205,7 +197,7 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 		boolean duplicate = false;
 		Connection conn = JDBCConnection.getJDBCConnection();
 		try {
-			String query = "select * from [user] where email = ?";
+			String query = "select * from [User] where email = ?";
 
 			PreparedStatement psmt = conn.prepareStatement(query);
 

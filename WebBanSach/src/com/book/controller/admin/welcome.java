@@ -18,7 +18,7 @@ public class welcome extends HttpServlet {
 		HttpSession session = req.getSession();
 		Object obj=session.getAttribute("account");
 		User user=(User) obj;
-		req.setAttribute("username", user.getUsername());
+		req.setAttribute("username", user.getName());
 		req.getRequestDispatcher("/view/admin/view/index.jsp").forward(req, resp);
 	}
 

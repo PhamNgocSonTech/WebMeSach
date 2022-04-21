@@ -18,10 +18,14 @@ import com.book.service.impl.ProductServiceImpl;
 @WebServlet(urlPatterns="/welcome")
 
 public class WellcomeController extends HttpServlet {
+	
+	
 	ProductService productService = new ProductServiceImpl();
 	CategoryService cateService = new CategoryServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
 		List<Product> productList = productService.getAll();
 		req.setAttribute("pwelcome", productList);
 

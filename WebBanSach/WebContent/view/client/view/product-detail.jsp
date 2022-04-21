@@ -85,7 +85,7 @@
 							<!-- Master Slider -->
 							<div class="master-slider ms-skin-default" id="masterslider">
 								<div class="ms-slide">
-									<c:url value="/view/client/static/img/${product.image}" var="imgUrl"></c:url>
+									<c:url value="/view/client/static/img/book-img/${product.image}" var="imgUrl"></c:url>
 									<img class="ms-brd" src="${url}/img/blank.gif"
 										data-src="${imgUrl}" alt="${product.name}">
 
@@ -119,7 +119,7 @@
 									| <a href="#"> Đánh giá</a></span></li>
 						</ul>
 						<!--/end shop product ratings-->
-						<h2>${product.des}</h2> <br>
+						<h2>${product.author}</h2> <br>
 						<ul class="list-inline shop-product-prices margin-bottom-30">
 							<li class="shop-red">$ ${product.price }.0</li>
 							<li class="line-through">${product.price * 1.5 }</li>
@@ -129,12 +129,7 @@
 
 						<h3 class="shop-product-title" style="font-size: 15px"><b>Mô tả</b></h3>
 						<ul class="list-inline product-size margin-bottom-30">
-						<p style="text-align: justify;">Bí Mật Của Naoko
-
-Cuộc sống của Hirasule trôi qua hết sức bình lặng, cho đến một ngày tai nạn giao thông khủng khiếp xảy ra và gã mất đi người vợ yêu quý nhất của mình, còn đứa con gái bé bỏng vẫn trong tình trạng hôn mê bất tỉnh. Nhưng chỉ sau một đêm, con gái gã tỉnh lại và một mực xưng mình là Naoko, vợ gã. Dường như linh hồn của Naoko đã nhập vào thể xác con gái, còn Monami thực sự đã chết. Rốt cuộc Hirasuke đã mất vợ hay con gái trong vụ tai nạn ấy?
-
-Bí mật của Naoko đã giành Giải thưởng của Hiệp hội các Nhà văn viết truyện kỳ bí Nhật Bản vào năm 1999, và là một trong những tác phẩm quan trọng nhất trong sự nghiệp của Higashino Keigo, bậc thầy truyện trinh thám Nhật thế kỷ XX.
-</p>
+						<p style="text-align: justify;">${product.des}</p>
 						</ul>
 						<!--/end product size-->
 
@@ -231,17 +226,17 @@ Bí mật của Naoko đã giành Giải thưởng của Hiệp hội các Nhà 
 								<div class="row">
 									<div class="col-sm-6">
 										<ul class="list-unstyled specifies-list">
-											<li><i class="fa fa-caret-right"></i>Nhà xuất bản: <span>Nhã Nam</span></li>
-											<li><i class="fa fa-caret-right"></i>Thể loại: <span>Trinh thám</span></li>
-                                            <li><i class="fa fa-caret-right"></i>Tác giả: <span>Keigo Higashino</span></li>
-											<li><i class="fa fa-caret-right"></i>Kích thước: <span>14 x 20.5cm</span></li>
+											<li><i class="fa fa-caret-right"></i>Nhà xuất bản: <span>${product.publisher.publisher_name}</span></li>
+											<li><i class="fa fa-caret-right"></i>Thể loại: <span>${product.category.name}</span></li>
+                                            <li><i class="fa fa-caret-right"></i>Tác giả: <span>${product.author}</span></li>
+											<li><i class="fa fa-caret-right"></i>Kích thước: <span>${product.size}</span></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-5">
 								<div class="responsive-video">
-								<c:url value="https://www.youtube.com/embed/U1MjdgKVeGI" var="link"></c:url>
+								<c:url value="https://www.youtube.com/embed/${product.embedCode}" var="link"></c:url>
 									<iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 							</div>

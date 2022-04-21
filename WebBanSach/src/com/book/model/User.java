@@ -3,12 +3,18 @@ package com.book.model;
 import java.io.Serializable;
 
 public class User implements Serializable {
+	
 	private int id;
 	private String email;
 	private String username;
 	private String password;
 	private String avatar;
 	private int roleId;
+	
+	private String name;
+	private String address;
+	
+	
 	public User() {
 		super();
 	}
@@ -26,6 +32,31 @@ public class User implements Serializable {
 		this.password = password;
 		this.avatar = avatar;
 		this.roleId = roleId;
+	}
+	
+	public User(int id, String email, String username, String password, String avatar, int roleId, String name,
+			String address) {
+		this.id = id;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.avatar = avatar;
+		this.roleId = roleId;
+		this.name = name;
+		this.address = address;
+	}
+	
+	
+	
+	public User(String email, String username, String password, String avatar, int roleId, String name,
+			String address) {
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.avatar = avatar;
+		this.roleId = roleId;
+		this.name = name;
+		this.address = address;
 	}
 	public int getId() {
 		return id;
@@ -63,6 +94,18 @@ public class User implements Serializable {
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
-
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
 	
 }
