@@ -29,6 +29,7 @@ import com.book.service.impl.CategoryServiceImpl;
 import com.book.service.impl.ProductServiceImpl;
 import com.book.service.impl.PublisherServiceImp;
 import com.book.service.impl.UserServiceImpl;
+import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/product/add" })
 public class ProductAddController extends HttpServlet {
@@ -61,7 +62,7 @@ public class ProductAddController extends HttpServlet {
 				if (item.getFieldName().equals("name")) {
 					product.setName(item.getString());
 				} else if (item.getFieldName().equals("author")) {
-					product.setAuthor(item.getString());;
+					product.setAuthor(item.getString());
 				} else if (item.getFieldName().equals("category")) {
 					product.setCategory(categoryService.get(Integer.parseInt(item.getString())));
 				} else if (item.getFieldName().equals("publisher")) {
@@ -71,7 +72,9 @@ public class ProductAddController extends HttpServlet {
 				} else if (item.getFieldName().equals("des")) {
 					product.setDes(item.getString());
 				} else if (item.getFieldName().equals("image")) {
-					final String dir = "D:\\GitHub\\WebMeSach\\WebBanSach\\WebContent\\view\\client\\static\\img\\book-img"; // ĐỔI THÀNH ĐƯỜNG DẪN ĐẾN THƯ MỤC book-img tương ứng 
+					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION
+							+ "/WebContent/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
+																				// ABSOLUTE_PROJECT_LOCATION
 					String originalFileName = item.getName(); // Tên của image cũ
 					int index = originalFileName.lastIndexOf(".");
 					String ext = originalFileName.substring(index + 1);
@@ -79,25 +82,23 @@ public class ProductAddController extends HttpServlet {
 					File file = new File(dir + "/" + fileName);
 					item.write(file);
 					product.setImage(fileName);
-					
 
 //					 VỊ TRÍ LƯU ẢNH:  D:\\GitHub\\WebMeSach\\WebBanSach\\WebContent\\view\\client\\static\\img\\book-img
 //					 TÊN ẢNH: fileName
 				} else if (item.getFieldName().equals("review")) {
-					
+
 					try {
 						product.setEmbedCode(item.getString().trim().substring(17)); // Lấy code nhúng của youtube
 					} catch (Exception e) {
 						product.setEmbedCode(null);
 					}
-					
+
 				} else if (item.getFieldName().equals("size")) {
 					product.setSize(item.getString());
-				} 
 				}
-				
+			}
 
-		 productService.insert(product);
+			productService.insert(product);
 
 			resp.sendRedirect(req.getContextPath() + "/admin/product/list"); //
 		} catch (FileUploadException e) {

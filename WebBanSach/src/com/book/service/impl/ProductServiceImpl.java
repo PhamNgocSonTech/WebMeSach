@@ -11,6 +11,7 @@ import com.book.model.Product;
 import com.book.model.User;
 import com.book.service.ProductService;
 import com.book.service.UserService;
+import com.book.util.Constant;
 
 public class ProductServiceImpl implements ProductService {
 	ProductDao productDao = new ProductDaoImpl();
@@ -32,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
 		if (!newProduct.getImage().equals(oldProduct.getImage())) {
 			// XOA ANH CU DI
 			String fileName = oldProduct.getImage();
-			final String dir = "D://GitHub//WebMeSach//WebBanSach//WebContent//view//client//static//img/book-img";
+			final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img" ; // Nhớ đổi đường dẫn của ABSOLUTE_PROJECT_LOCATION
 			File file = new File(dir + "/" + fileName);
 			if (file.exists()) {
 				file.delete();
@@ -53,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 		
 			// XOA ANH CU DI
 			String fileName = oldProduct.getImage();
-			final String dir = "D://GitHub//WebMeSach//WebBanSach//WebContent//view//client//static//img/book-img";
+			final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img" ; // Nhớ đổi đường dẫn của ABSOLUTE_PROJECT_LOCATION
 			File file = new File(dir + "/" + fileName);
 			if (file.exists()) {
 				file.delete();

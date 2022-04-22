@@ -28,6 +28,7 @@ import com.book.service.impl.CategoryServiceImpl;
 import com.book.service.impl.ProductServiceImpl;
 import com.book.service.impl.PublisherServiceImp;
 import com.book.service.impl.UserServiceImpl;
+import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/product/edit" })
 public class ProductEditController extends HttpServlet {
@@ -90,7 +91,7 @@ public class ProductEditController extends HttpServlet {
 					product.setPrice(Long.parseLong(item.getString()));
 				} else if (item.getFieldName().equals("image")) {
 					if (item.getSize() > 0) {// neu co file d
-						final String dir = "D:\\GitHub\\WebMeSach\\WebBanSach\\WebContent\\view\\client\\static\\img\\book-img"; // ĐỔI THÀNH ĐƯỜNG DẪN ĐẾN THƯ MỤC book-img tương ứng 
+						final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img" ; // Nhớ đổi đường dẫn của ABSOLUTE_PROJECT_LOCATION
 						String originalFileName = item.getName(); // Tên của image cũ
 						int index = originalFileName.lastIndexOf(".");
 						String ext = originalFileName.substring(index + 1);
