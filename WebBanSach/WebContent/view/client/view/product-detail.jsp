@@ -235,9 +235,19 @@
 								</div>
 							</div>
 							<div class="col-md-5">
-								<div class="responsive-video">
+								<div class="responsive-video">						
+								<c:choose>
+								<c:when test="${ not empty product.embedCode}">
 								<c:url value="https://www.youtube.com/embed/${product.embedCode}" var="link"></c:url>
 									<iframe width="560" height="315" src="${link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</c:when>
+							    <c:otherwise>
+							    <img alt="Mesach.com" src="${pageContext.request.contextPath }/view/client/static/img/book-slide-gif.gif">
+							    </c:otherwise>
+								
+								</c:choose> 
+								
+							
 								</div>
 							</div>
 						</div>
@@ -264,7 +274,7 @@
 
 				<ul class="list-inline owl-slider-v4" style="text-align: center;">
 					<li class="item">
-					<a href="#"><img class="img-responsive" src="/WebBanSach/view/client/static/img/${product.image}" alt=""></a>
+					<a href="#"><img class="img-responsive" src="/WebBanSach/view/client/static/img/book-img/${product.image}" alt=""></a>
 						<div class="product-description-v2">
 							<div class="margin-bottom-5">
 								<h4 class="title-price">

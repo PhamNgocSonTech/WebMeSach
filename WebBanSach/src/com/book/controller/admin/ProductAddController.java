@@ -84,7 +84,13 @@ public class ProductAddController extends HttpServlet {
 //					 VỊ TRÍ LƯU ẢNH:  D:\\GitHub\\WebMeSach\\WebBanSach\\WebContent\\view\\client\\static\\img\\book-img
 //					 TÊN ẢNH: fileName
 				} else if (item.getFieldName().equals("review")) {
-					product.setEmbedCode(item.getString().trim().substring(17)); // Lấy code nhúng của youtube
+					
+					try {
+						product.setEmbedCode(item.getString().trim().substring(17)); // Lấy code nhúng của youtube
+					} catch (Exception e) {
+						product.setEmbedCode(null);
+					}
+					
 				} else if (item.getFieldName().equals("size")) {
 					product.setSize(item.getString());
 				} 

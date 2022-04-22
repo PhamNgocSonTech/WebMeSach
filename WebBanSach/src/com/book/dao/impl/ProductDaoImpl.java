@@ -31,8 +31,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao {
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1,String.format(" N'%s' ", product.getName())); 
-			System.out.println(product.getName());
+			ps.setString(1,product.getName()); 
 			ps.setLong(2, product.getPrice());
 			ps.setString(3, product.getImage());
 			ps.setInt(4, product.getCategory().getId());
@@ -49,18 +48,21 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao {
 
 	@Override
 	public void edit(Product product) {
-		String sql = "UPDATE Product SET Product.name = ? , price = ?, image = ?,cate_id=?, des=?  WHERE id = ?";
+		String sql = "UPDATE Product SET Product.name = ? , price = ?, image = ?,cate_id = ?, des = ?, author = ?, publisher_id = ?, size = ?, embedCode = ?  WHERE id = ?";
 		Connection con = super.getJDBCConnection();
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, product.getName());
 			ps.setDouble(2, product.getPrice());
-			;
 			ps.setString(3, product.getImage());
 			ps.setInt(4, product.getCategory().getId());
 			ps.setString(5, product.getDes());
-			ps.setInt(6, product.getId());
+			ps.setString(6, product.getAuthor());
+			ps.setInt(7, product.getPublisher().getPublisher_id());
+			ps.setString(8, product.getSize());
+			ps.setString(9, product.getEmbedCode());
+			ps.setInt(10, product.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

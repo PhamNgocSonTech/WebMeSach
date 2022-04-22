@@ -280,7 +280,7 @@
 									review</a> <a class="add-to-cart"
 									href="${pageContext.request.contextPath }/product/detail?id=${p.id}"><i
 									class="fa fa-shopping-cart"></i>Add to cart</a>
-								<div class="shop-rgba-red rgba-banner">Out of stock</div>
+								<div class="shop-rgba-red rgba-banner">Bán chạy nhất</div>
 							</div>
 							<div class="product-description product-description-brd">
 								<div class="overflow-h margin-bottom-5">
@@ -290,7 +290,7 @@
 										<span class="gender">${p.author}</span>
 									</div>
 									<div class="product-price">
-										<span class="title-price">$ ${p.price }</span>
+										<span class="title-price">${p.price } VNĐ</span>
 
 									</div>
 								</div>
@@ -349,7 +349,7 @@
 
 								</div>
 								<div class="product-price">
-									<span class="title-price">$ ${p.price }</span>
+									<span class="title-price"> ${p.price } VNĐ</span>
 								</div>
 							</div>
 							<ul class="list-inline product-ratings">

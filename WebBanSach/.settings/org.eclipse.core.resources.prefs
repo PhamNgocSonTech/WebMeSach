@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/view/admin/view/create-product.jsp=UTF-8
+encoding//WebContent/view/admin/view/edit-product.jsp=UTF-8
 encoding//WebContent/view/admin/view/index.jsp=UTF-8
 encoding//WebContent/view/client/view/cart.jsp=UTF-8
 encoding//WebContent/view/client/view/footer.jsp=UTF-8

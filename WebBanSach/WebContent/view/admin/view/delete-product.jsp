@@ -29,8 +29,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Chỉnh sửa sản phẩm</h2>
-						<h5>Chỉnh sửa lại thông tin sản phẩm hiện tại</h5>
+						<h2>Xóa sản phẩm</h2>
+						<h5>Bạn có chắc chắn muốn xóa sản phẩm này?</h5>
 					</div>
 				</div>
 				<!-- /. ROW  -->
@@ -39,82 +39,45 @@
 					<div class="col-md-12">
 						<!-- Form Elements -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Chỉnh sửa thông tin</div>
+							<div class="panel-heading">Thông tin sản phẩm</div>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<c:url value="/admin/product/edit" var="edit"></c:url>
-										<form role="form" action="${edit }" method="post"
+										<c:url value="/admin/product/delete" var="delete"></c:url>
+										
+										<form role="form" action="${delete}" method="post"
 											enctype="multipart/form-data">
-											<input name="id" value="${product.id }" hidden="">
+											<input name="id" value="${product.id}" type="hidden">
+
+											<div class="form-group">
+												<label>Hình ảnh:</label> <img
+													alt=""
+													src="${pageContext.request.contextPath}/view/client/static/img/book-img/${product.image}">
+											</div>
+
 											<div class="form-group">
 												<label>Tên sản phẩm:</label> <input class="form-control"
-													value="${product.name }" name="name" />
+													value="${product.name }" readonly="readonly" />
 											</div>
 											<div class="form-group">
 												<label>Tác giả:</label> <input class="form-control"
-													value="${product.author }" name="author" />
+													value="${product.author }" 
+													readonly="readonly" />
 											</div>
 											<div class="form-group">
 												<label>Giá tiền (VND)</label> <input class="form-control"
-													value="${product.price }" type="number" name="price" />
-											</div>
-											<div class="form-group">
-												<label>Kích thước sản phẩm:</label> <input
-													class="form-control" value="${product.size }" name="size" />
-											</div>
-											<div class="form-group">
-												<label>Mô tả sản phẩm </label> <br>
-												<textarea rows="4" cols="50" name="des" id="editer">${product.des }</textarea>
+													value="${product.price }" type="number"
+													readonly="readonly" />
 											</div>
 
 											<div class="form-group">
-												<label>Thể loại</label>
-												<div class="checkbox">
-													<select name="cate">
-														<c:forEach items="${categories}" var="c">
-															<c:if test="${product.category.id eq c.id}">
-																<option value="${product.category.id}"
-																	selected="selected">${c.name}</option>
-															</c:if>
-															<option value="${c.id}">${c.name}</option>
-														</c:forEach>
-													</select>
-												</div>
-
+												<label>Nhà xuất bản</label> <input class="form-control"
+													value="${product.publisher.publisher_name}" type="text" 
+													readonly="readonly" />
 											</div>
 
-											<div class="form-group">
-												<label>Nhà xuất bản</label>
-												<div class="checkbox">
-													<select name="publisher">
-														<c:forEach items="${publishers}" var="c">
-															<c:if test="${product.publisher.publisher_id eq c.publisher_id}">
-																<option value="${c.publisher_id}"
-																	selected="selected">${c.publisher_name}</option>
-															</c:if>
-															<option value="${c.publisher_id}">${c.publisher_name}</option>
-														</c:forEach>
-													</select>
-												</div>
-
-											</div>
-
-											<div class="form-group">
-												<label>Hình ảnh:</label> <input type="file" name="image"
-													value="${product.image}" />
-											</div>
-
-											<input name="old-img" value="${product.image}" hidden="">
-
-											<div class="form-group">
-												<label>Link review sản phẩm:</label> <input
-													class="form-control"
-													value="https://youtu.be/${product.embedCode}" name="review"
-													type="url" />
-											</div>
-											<button type="submit" class="btn btn-default">Edit</button>
-											<button type="reset" class="btn btn-primary">Reset</button>
+											<button type="submit" class="btn btn-default">Xóa</button>
+											<button type="reset" class="btn btn-primary">Hủy bỏ</button>
 										</form>
 
 

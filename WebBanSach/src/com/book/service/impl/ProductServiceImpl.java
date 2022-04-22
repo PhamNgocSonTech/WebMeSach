@@ -25,27 +25,41 @@ public class ProductServiceImpl implements ProductService {
 	public void edit(Product newProduct) {
 		Product oldProduct = productDao.get(newProduct.getId());
 
-		oldProduct.setName(newProduct.getName());
-		oldProduct.setPrice(newProduct.getPrice());
-		oldProduct.setCategory(newProduct.getCategory());
-		if (newProduct.getImage() != null) {
+//		oldProduct.setName(newProduct.getName());
+//		oldProduct.setPrice(newProduct.getPrice());
+//		oldProduct.setCategory(newProduct.getCategory());
+		
+		if (!newProduct.getImage().equals(oldProduct.getImage())) {
 			// XOA ANH CU DI
 			String fileName = oldProduct.getImage();
-			final String dir = "F:\\upload";
+			final String dir = "D://GitHub//WebMeSach//WebBanSach//WebContent//view//client//static//img/book-img";
 			File file = new File(dir + "/" + fileName);
 			if (file.exists()) {
 				file.delete();
 			}
-
-			oldProduct.setImage(newProduct.getImage());
 		}
 
-		productDao.edit(oldProduct);
+		productDao.edit(newProduct);
 
 	}
 
 	@Override
 	public void delete(int id) {
+		Product oldProduct = productDao.get(id);
+
+//		oldProduct.setName(newProduct.getName());
+//		oldProduct.setPrice(newProduct.getPrice());
+//		oldProduct.setCategory(newProduct.getCategory());
+		
+			// XOA ANH CU DI
+			String fileName = oldProduct.getImage();
+			final String dir = "D://GitHub//WebMeSach//WebBanSach//WebContent//view//client//static//img/book-img";
+			File file = new File(dir + "/" + fileName);
+			if (file.exists()) {
+				file.delete();
+			}
+		
+
 		productDao.delete(id);
 
 	}

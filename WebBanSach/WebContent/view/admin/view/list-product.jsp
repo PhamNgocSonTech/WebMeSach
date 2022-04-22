@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Product Management</title>
+<title>Quản lý sản phẩm</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -35,8 +35,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>All Product</h2>
-						<h5>You can management product in here</h5>
+						<h2>Tất cả sản phẩm</h2>
+						<h5>Bạn có thể quản lý tất cả sản phẩm của bạn ở đây</h5>
 
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 					<div class="col-md-12">
 						<!-- Advanced Tables -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Advanced Tables</div>
+							<div class="panel-heading">Bảng thông tin sản phẩm</div>
 							<a href="${pageContext.request.contextPath }/admin/product/add"
 								class="btn btn-primary btn-block text-uppercase mb-3"
 								style="width: 170px; margin: 10px 10px 0 10px;">Thêm sản
@@ -65,7 +65,7 @@
 												<th>Giá tiền</th>
 												<th>Thể Loại</th>
 												<th>Nhà xuất bản</th>
-												<th>Action</th>
+												<th>Hành động</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -84,11 +84,11 @@
 													<td>${pro.publisher.publisher_name }</td>
 													<td><a
 														href="<c:url value='/product/detail?id=${pro.id }'/>"
-														class="center">Detail</a> | <a
+														class="center">Chi tiết</a> | <a
 														href="<c:url value='/admin/product/edit?id=${pro.id }'/>"
-														class="center">Edit</a> | <a
+														class="center">Chỉnh sửa</a> | <a
 														href="<c:url value='/admin/product/delete?id=${pro.id }'/>"
-														class="center">Delete</a></td>
+														class="center">Xóa</a></td>
 
 												</tr>
 											</c:forEach>
