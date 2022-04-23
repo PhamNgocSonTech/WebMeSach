@@ -26,12 +26,16 @@ import com.book.service.impl.UserServiceImpl;
 public class OrderListController extends HttpServlet {
 	CartItemService cartItemService=new CartServiceItemImpl();
 	CartService cartService=new CartServiceImpl();
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	List<CartItem> listCartItem =cartItemService.getAll();
 	req.setAttribute("listCartItem", listCartItem);
 	RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/list-order.jsp");
 	dispatcher.forward(req, resp);
+	
+
 	}
 	
 }

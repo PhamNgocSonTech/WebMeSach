@@ -29,6 +29,8 @@ public class UserEditController extends HttpServlet {
 		int id = Integer.parseInt(req.getParameter("id"));
 		User user = userService.get(id);
 		req.setAttribute("user", user);
+		
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/edit-user.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -39,6 +41,8 @@ public class UserEditController extends HttpServlet {
 		User user = new User();
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+		
+	
 
 		try {
 			List<FileItem> items = servletFileUpload.parseRequest(req);

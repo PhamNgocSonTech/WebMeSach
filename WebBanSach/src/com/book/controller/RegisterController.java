@@ -1,6 +1,7 @@
 package com.book.controller;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +23,8 @@ public class RegisterController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		HttpSession session = req.getSession(false);
-		if (session != null && session.getAttribute("username") != null) {
+		HttpSession session = req.getSession(false); 
+		if (session != null && session.getAttribute("username") != null) { 
 			resp.sendRedirect(req.getContextPath() + "/admin");
 			return;
 		}
@@ -49,6 +50,8 @@ public class RegisterController extends HttpServlet {
 		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		String name = req.getParameter("name");
+		
+
 
 		UserService service = new UserServiceImpl();
 		String alertMsg = "";
@@ -59,13 +62,15 @@ public class RegisterController extends HttpServlet {
 			req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
 			return;
 		} else if (service.checkExistUsername(username)) {
+			String name_utf8 = URLDecoder.decode(name, "UTF-8");
+			System.out.println(name_utf8);
 			alertMsg = "Tên người dùng đã tồn tại!";
 			req.setAttribute("alert", alertMsg);
 			req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
 			return;
 		} else {
 		
-		User user = new User(email, username, password, "default-avt.png", 1, name, null);
+		User user = new User(email, username, password, "default-avt.png", 2, name, null);
 
 		boolean isSuccess = service.register(user);
 

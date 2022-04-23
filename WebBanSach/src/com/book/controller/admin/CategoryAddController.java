@@ -31,6 +31,8 @@ public class CategoryAddController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/add-category.jsp");
 		dispatcher.forward(req, resp);
+		
+	
 	}
 
 	@Override
@@ -45,6 +47,8 @@ public class CategoryAddController extends HttpServlet {
 		cateService.insert(category);
 
 		resp.sendRedirect(req.getContextPath() + "/admin/category/list");
+		
+	
 
 	}
 }

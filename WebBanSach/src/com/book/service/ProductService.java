@@ -14,10 +14,15 @@ public interface ProductService {
 	Product get(int id);
 
 	List<Product> getAll();
+	
+	List<Product> get_N_Books_Random(int n);
+	
+	List<Product> get_N_Books_Random_ByCategory(int n, int id);
 
 	List<Product> search(String username);
 	
 	List<Product> seachByCategory(int cate_id);
 	
 	List<Product> seachByName(String productName);
+	
 }

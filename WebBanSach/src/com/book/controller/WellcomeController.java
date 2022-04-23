@@ -28,6 +28,15 @@ public class WellcomeController extends HttpServlet {
 		
 		List<Product> productList = productService.getAll();
 		req.setAttribute("pwelcome", productList);
+		
+		List<Product> productsBestApprociate = productService.get_N_Books_Random(3);
+		List<Product> productsBestSeller = productService.get_N_Books_Random(3);
+		List<Product> productsBestPromotion = productService.get_N_Books_Random(3);
+		req.setAttribute("productsBestApprociate", productsBestApprociate);
+		req.setAttribute("productsBestSeller", productsBestSeller);
+		req.setAttribute("productsBestPromotion", productsBestPromotion);
+		
+		
 
 		req.getRequestDispatcher("/view/client/view/index.jsp").forward(req, resp);
 	}

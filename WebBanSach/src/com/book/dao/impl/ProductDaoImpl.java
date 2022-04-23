@@ -276,4 +276,83 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao {
 		return productList;
 	}
 
+	@Override
+	public List<Product> get_N_Books_Random(int n) {
+		//req.getServletContext().getRealPath("/book-img")
+
+		List<Product> productList = new ArrayList<Product>();
+		String sql = "SELECT  TOP  (?)  product.author, product.size, product.embedCode, Publisher.publisher_name, Publisher.publisher_id ,product.id, product.name AS p_name, product.price, product.image, product.des , category.cate_name AS c_name, category.cate_id AS c_id  "
+				+ "FROM product INNER JOIN category " + "ON product.cate_id = category.cate_id" + " INNER JOIN publisher " + " ON product.publisher_id = publisher.publisher_id " + " ORDER BY NEWID() ";
+		Connection conn = super.getJDBCConnection();
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, n);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Category category = categortService.get(rs.getInt("c_id"));
+				Publisher publisher = publisherService.getPublisher(rs.getInt("publisher_id"));
+				Product product = new Product();
+				product.setId(rs.getInt("id"));
+				product.setName(rs.getString("p_name"));
+				product.setPrice(rs.getLong("price"));
+				product.setImage(rs.getString("image"));
+				product.setDes(rs.getString("des"));
+				product.setCategory(category);
+				product.setPublisher(publisher);
+				product.setAuthor(rs.getString("author"));
+				product.setEmbedCode(rs.getString("embedCode"));
+				product.setSize(rs.getString("size"));
+				productList.add(product);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return productList;
+	}
+
+	@Override
+	public List<Product> get_N_Books_Random_ByCategory(int n, int id) {
+		//req.getServletContext().getRealPath("/book-img")
+
+		List<Product> productList = new ArrayList<Product>();
+		String sql = "SELECT  TOP  (?)  product.author, product.size, product.embedCode, Publisher.publisher_name, Publisher.publisher_id ,product.id, product.name AS p_name, product.price, product.image, product.des , category.cate_name AS c_name, category.cate_id AS c_id  "
+				+ "FROM product INNER JOIN category " + "ON product.cate_id = category.cate_id" + " INNER JOIN publisher " + " ON product.publisher_id = publisher.publisher_id " + " WHERE Category.cate_id = ? " + " ORDER BY NEWID() ";
+		Connection conn = super.getJDBCConnection();
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, n);
+			ps.setInt(2, id);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Category category = categortService.get(rs.getInt("c_id"));
+				Publisher publisher = publisherService.getPublisher(rs.getInt("publisher_id"));
+				Product product = new Product();
+				product.setId(rs.getInt("id"));
+				product.setName(rs.getString("p_name"));
+				product.setPrice(rs.getLong("price"));
+				product.setImage(rs.getString("image"));
+				product.setDes(rs.getString("des"));
+				product.setCategory(category);
+				product.setPublisher(publisher);
+				product.setAuthor(rs.getString("author"));
+				product.setEmbedCode(rs.getString("embedCode"));
+				product.setSize(rs.getString("size"));
+				productList.add(product);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return productList;
+	}
+
 }

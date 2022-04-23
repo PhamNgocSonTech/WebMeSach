@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <c:url value="/view/admin/static" var="url"></c:url>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Order Management</title>
+<title>Quản Lý Đặt Hàng</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -35,7 +35,7 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Order Management</h2>
+						<h2>Quản Lý Đặt Hàng </h2>
 
 
 					</div>
@@ -47,24 +47,24 @@
 					<div class="col-md-12">
 						<!-- Advanced Tables -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Advanced Tables</div>
+							<div class="panel-heading">Bảng quản lý đặt hàng</div>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
 										id="dataTables-example">
 										<thead>
 											<tr>
-												<th>index</th>
+												<th>Số thứ tự</th>
 												<th>ID</th>
-												<th>Buyer</th>
+												<th>Người mua</th>
 												<th>Email</th>
-												<th>Date</th>
-												<th>Product</th>
-												<th>Quantity</th>
-												<th>Price</th>
-												<th>Sum</th>
-												<th>Status</th>
-												<th>Action</th>
+												<th>Ngày</th>
+												<th>Sản phẩm</th>
+												<th>Số lượng</th>
+												<th>Gía</th>
+												<th>Tổng cộng</th>
+												<th>Tình trạng</th>
+												<th>Hoạt động</th>
 
 
 											</tr>
@@ -84,14 +84,14 @@
 													<td>${list.quantity }</td>
 													<td>$ ${list.product.price }</td>
 													<td>$ ${ list.quantity * list.product.price }</td>
-													<td class="center">Pending</td>
+													<td class="center">Đang xử lý</td>
 
 
 													<td><a
 														href="<c:url value='/admin/order/edit?id=${list.id }'/>"
-														class="center">Edit</a> | <a
+														class="center">Sửa</a> | <a
 														href="<c:url value='/admin/order/delete?id=${list.id }'/>"
-														class="center">Delete</a></td>
+														class="center">Xóa</a></td>
 
 												</tr>
 											</c:forEach>

@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="${pageContext.request.contextPath }">
-                        <img id="logo-header" src="${url}/img/logo.png" alt="Logo">
+                        <img style="height: 51px;" id="logo-header" src="${url}/img/Mesach.png" alt="Logo">
                     </a>
                 </div>
 

@@ -90,4 +90,16 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.seachByName(productName);
 	}
 
+	@Override
+	public List<Product> get_N_Books_Random(int n) {
+		// TODO Auto-generated method stub
+		return productDao.get_N_Books_Random(n);
+	}
+
+	@Override
+	public List<Product> get_N_Books_Random_ByCategory(int n, int id) {
+		// TODO Auto-generated method stub
+		return productDao.get_N_Books_Random_ByCategory(n, id);
+	}
+
 }

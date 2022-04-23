@@ -34,6 +34,8 @@ public class CategoryeEditController extends HttpServlet {
 		
 		req.setAttribute("category", category);
 		
+	
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/category/edit-category.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -46,6 +48,7 @@ public class CategoryeEditController extends HttpServlet {
 		category.setName(req.getParameter("name"));
 		cateService.edit(category);
 		
+
 		resp.sendRedirect(req.getContextPath()+"/admin/category/list");
 
 	}

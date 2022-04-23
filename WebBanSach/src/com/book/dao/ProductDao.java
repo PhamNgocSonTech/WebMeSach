@@ -14,6 +14,10 @@ public interface ProductDao {
 	Product get(int id);
 
 	List<Product> getAll();
+	
+	List<Product> get_N_Books_Random(int n);
+
+	List<Product> get_N_Books_Random_ByCategory(int n, int id);
 
 	List<Product> search(String username);
 	

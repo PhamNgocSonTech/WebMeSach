@@ -1,4 +1,5 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +7,7 @@
 <head>
 <c:url value="/view/client/static" var="url"></c:url>
 <meta charset="UTF-8">
-<title>Product List</title>
+<title>Tìm kiếm sản phẩm</title>
 <!-- Favicon -->
 <link rel="shortcut icon" href="favicon.ico">
 
@@ -63,7 +64,7 @@
 			<div class="container">
 				<span class="page-name">Tìm kiếm sản phẩm</span>
 				<h1>
-					TÌM KIẾM <span class="shop-green">SẢN PHẨM</span> THEO TÊN
+					TÌM KIẾM <span class="shop-green">SẢN PHẨM</span> THEO TÊN 
 				</h1>
 				<ul class="breadcrumb-v4-in">
 					<li><a href="${pageContext.request.contextPath }">Trang chủ</a></li>
@@ -160,8 +161,8 @@
 											</li>
 										</ul>
 										<div class="margin-bottom-10">
-											<span class="title-price margin-right-10">$ ${p.price }.0</span> <span
-												class="title-price line-through">$ ${p.price *1.25 }</span>
+											<span class="title-price margin-right-10"><fmt:formatNumber value="${p.price}" /> VNĐ</span> <span
+												class="title-price line-through"><fmt:formatNumber value="${p.price*1.25}" /> VNĐ</span>
 											
 										</div>
 										<p class="margin-bottom-20">${p.author}</p>

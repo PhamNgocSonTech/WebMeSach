@@ -29,6 +29,10 @@ public class ProductDetailController extends HttpServlet {
 		req.setAttribute("categories", categories);
 
 		req.setAttribute("product", product);
+		
+		List<Product> rproduct = productService.get_N_Books_Random_ByCategory(6, product.getCategory().getId());
+		
+		req.setAttribute("rproduct", rproduct);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/client/view/product-detail.jsp");
 		dispatcher.forward(req, resp);

@@ -37,13 +37,14 @@ public class SendMail {
 	        @Override
 	        protected PasswordAuthentication getPasswordAuthentication() {
 				
-				 return new PasswordAuthentication("hc19082001@gmail.com",
-				  "gdazklgwkwrgeyvg");
-				
 				/*
-				 * return new PasswordAuthentication("sapmau2012@gmail.com",
-				 * "kkdirosynqnmynna");
+				 * return new PasswordAuthentication("hc19082001@gmail.com",
+				 * "gdazklgwkwrgeyvg");
 				 */
+				
+				 return new PasswordAuthentication("sapmau2012@gmail.com",
+				  "kkdirosynqnmynna");
+				 
 	            
 	        }
 	    });

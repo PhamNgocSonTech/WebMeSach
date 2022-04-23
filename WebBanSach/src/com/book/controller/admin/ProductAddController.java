@@ -44,6 +44,16 @@ public class ProductAddController extends HttpServlet {
 
 		req.setAttribute("categories", categories);
 		req.setAttribute("publishers", publishers);
+		
+		/*
+		 * //sửa lỗi font resp.setContentType("text/html;charset=UTF-8");
+		 * req.setCharacterEncoding("utf-8");
+		 * 
+		 * 
+		 */
+
+		
+		
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/create-product.jsp");
 		dispatcher.forward(req, resp);
@@ -55,6 +65,10 @@ public class ProductAddController extends HttpServlet {
 		Product product = new Product();
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+		
+	
+		
+		
 
 		try {
 			List<FileItem> items = servletFileUpload.parseRequest(req);
@@ -73,7 +87,7 @@ public class ProductAddController extends HttpServlet {
 					product.setDes(item.getString());
 				} else if (item.getFieldName().equals("image")) {
 					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION
-							+ "/WebContent/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
+							+ "/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
 																				// ABSOLUTE_PROJECT_LOCATION
 					String originalFileName = item.getName(); // Tên của image cũ
 					int index = originalFileName.lastIndexOf(".");
@@ -106,6 +120,7 @@ public class ProductAddController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 
 	}
 }

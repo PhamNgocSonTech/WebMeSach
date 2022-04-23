@@ -32,6 +32,7 @@ public class UserAddController extends HttpServlet {
 				req.setAttribute("errMsg", "Username da ton tai!!!");
 			}
 		}
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/add-user.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -42,6 +43,8 @@ public class UserAddController extends HttpServlet {
 		User user = new User();
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+		
+	
 
 		try {
 			List<FileItem> items = servletFileUpload.parseRequest(req);
