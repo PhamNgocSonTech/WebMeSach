@@ -48,10 +48,6 @@ public class ProductEditController extends HttpServlet {
 
 		req.setAttribute("product", product);
 
-		
-
-		
-
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/edit-product.jsp");
 		dispatcher.forward(req, resp);
