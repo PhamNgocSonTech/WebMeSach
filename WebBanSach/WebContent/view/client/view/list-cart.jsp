@@ -119,13 +119,13 @@
 										<c:forEach items="${sessionScope.cart}" var="map">
 
 											<tr>
-												<c:url value="/view/client/static/img/${map.value.product.image}"
+												<c:url value="/view/client/static/img/book-img/${map.value.product.image}"
 													var="imgUrl"></c:url>
 												<td class="product-in-table"><img
 													class="img-responsive" src="${imgUrl}" alt="">
 													<div class="product-it-in">
 														<h3>${map.value.product.name }</h3>
-														<span>${map.value.product.des }</span>
+														<span>${map.value.product.author }</span>
 													</div></td>
 												<td>$ ${map.value.product.price }</td>
 												<td>${map.value.quantity }</td>

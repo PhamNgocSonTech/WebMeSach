@@ -1,4 +1,5 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -160,8 +161,8 @@
 											</li>
 										</ul>
 										<div class="margin-bottom-10">
-											<span class="title-price margin-right-10">$ ${p.price }.0</span> <span
-												class="title-price line-through">$ ${p.price *1.25 }</span>
+											<span class="title-price margin-right-10"><fmt:formatNumber value="${p.price}" /> VNĐ</span> <span
+												class="title-price line-through"><fmt:formatNumber value="${p.price*1.25}" /> VNĐ</span>
 											
 										</div>
 										<p class="margin-bottom-20">${p.author}</p>

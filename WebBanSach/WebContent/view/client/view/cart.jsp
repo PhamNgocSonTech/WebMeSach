@@ -10,7 +10,7 @@
 		<ul class="list-unstyled badge-open mCustomScrollbar"
 			data-mcs-theme="minimal-dark">
 			<c:forEach items="${sessionScope.cart}" var="map">
-				<li><c:url value="/view/client/static/img/${map.value.product.image}"
+				<li><c:url value="/view/client/static/img/book-img/${map.value.product.image}"
 						var="imgUrl"></c:url> <img src="${imgUrl}" alt="" width="10"
 					height="10"> <a
 					href="${pageContext.request.contextPath}/member/cart/remove?pId=${map.value.product.id} "><button

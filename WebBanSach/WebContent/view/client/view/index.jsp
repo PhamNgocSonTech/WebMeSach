@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <c:url value="/view/client/static" var="url"></c:url>
@@ -78,22 +79,24 @@
 					<!-- SLIDE -->
 					<li class="revolution-mch-1" data-transition="fade"
 						data-slotamount="5" data-masterspeed="1000" data-title="Slide 1">
-						<!-- MAIN IMAGE --> <img src="${url}/img/bg-1.png" alt="darkblurbg"
-						data-bgfit="cover" data-bgposition="left top"
+						<!-- MAIN IMAGE --> <img src="${url}/img/bg-1.png"
+						alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
 						data-bgrepeat="no-repeat">
 
 						<div class="tp-caption revolution-ch1 sft start" data-x="center"
 							data-hoffset="0" data-y="100" data-speed="1500" data-start="500"
 							data-easing="Back.easeInOut" data-endeasing="Power1.easeIn"
 							data-endspeed="300">
-							Luôn cập nhật <br> <strong>Những đầu sách </strong><br> mới
+							Luôn cập nhật <br> <strong>Những đầu sách </strong><br>
+							mới
 						</div> <!-- LAYER -->
 						<div class="tp-caption sft" data-x="center" data-hoffset="0"
 							data-y="380" data-speed="1600" data-start="1800"
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
 							style="z-index: 6">
-							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem ngay</a>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem
+								ngay</a>
 						</div>
 					</li>
 					<!-- END SLIDE -->
@@ -101,8 +104,8 @@
 					<!-- SLIDE -->
 					<li class="revolution-mch-1" data-transition="fade"
 						data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-						<!-- MAIN IMAGE --> <img src="${url}/img/bg-2.png" alt="darkblurbg"
-						data-bgfit="cover" data-bgposition="left top"
+						<!-- MAIN IMAGE --> <img src="${url}/img/bg-2.png"
+						alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
 						data-bgrepeat="no-repeat">
 
 						<div class="tp-caption revolution-ch3 sft start" data-x="center"
@@ -115,15 +118,15 @@
 							data-hoffset="-14" data-y="210" data-speed="1400"
 							data-start="2000" data-easing="Power4.easeOut"
 							data-endspeed="300" data-endeasing="Power1.easeIn"
-							data-captionhidden="off" style="z-index: 6">
-							Chúng tôi cam kết các loại sách bán trên web đều là sách mới và thật 100% 
-						</div> <!-- LAYER -->
+							data-captionhidden="off" style="z-index: 6">Chúng tôi cam
+							kết các loại sách bán trên web đều là sách mới và thật 100%</div> <!-- LAYER -->
 						<div class="tp-caption sft" data-x="center" data-hoffset="0"
 							data-y="300" data-speed="1600" data-start="1800"
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
 							style="z-index: 6">
-							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem ngay</a>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem
+								ngay</a>
 						</div>
 					</li>
 					<!-- END SLIDE -->
@@ -131,8 +134,8 @@
 					<!-- SLIDE -->
 					<li class="revolution-mch-1" data-transition="fade"
 						data-slotamount="5" data-masterspeed="1000" data-title="Slide 3">
-						<!-- MAIN IMAGE --> <img src="${url}/img/bg-3.png" alt="darkblurbg"
-						data-bgfit="cover" data-bgposition="right top"
+						<!-- MAIN IMAGE --> <img src="${url}/img/bg-3.png"
+						alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
 						data-bgrepeat="no-repeat">
 
 						<div class="tp-caption revolution-ch3 sft start" data-x="right"
@@ -145,15 +148,14 @@
 							data-hoffset="0" data-y="210" data-speed="1400" data-start="2000"
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
-							style="z-index: 6">
-							4.9/5 sao theo bình chọn gần đây
-						</div> <!-- LAYER -->
+							style="z-index: 6">4.9/5 sao theo bình chọn gần đây</div> <!-- LAYER -->
 						<div class="tp-caption sft" data-x="right" data-hoffset="0"
 							data-y="300" data-speed="1600" data-start="2800"
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
 							style="z-index: 6">
-							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Mua ngay</a>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Mua
+								ngay</a>
 						</div>
 					</li>
 					<!-- END SLIDE -->
@@ -161,8 +163,8 @@
 					<!-- SLIDE -->
 					<li class="revolution-mch-1" data-transition="fade"
 						data-slotamount="5" data-masterspeed="1000" data-title="Slide 4">
-						<!-- MAIN IMAGE --> <img src="${url}/img/bg-4.jpg" alt="darkblurbg"
-						data-bgfit="cover" data-bgposition="left top"
+						<!-- MAIN IMAGE --> <img src="${url}/img/bg-4.jpg"
+						alt="darkblurbg" data-bgfit="cover" data-bgposition="left top"
 						data-bgrepeat="no-repeat">
 
 						<div class="tp-caption revolution-ch1 sft start" data-x="center"
@@ -179,7 +181,9 @@
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
 							style="z-index: 6">
-							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem thêm</a> <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Mua ngay</a>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem
+								thêm</a> <a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Mua
+								ngay</a>
 						</div>
 					</li>
 					<!-- END SLIDE -->
@@ -187,8 +191,8 @@
 					<!-- SLIDE -->
 					<li class="revolution-mch-1" data-transition="fade"
 						data-slotamount="5" data-masterspeed="1000" data-title="Slide 5">
-						<!-- MAIN IMAGE --> <img src="${url}/img/bg-5.png" alt="darkblurbg"
-						data-bgfit="cover" data-bgposition="right top"
+						<!-- MAIN IMAGE --> <img src="${url}/img/bg-5.png"
+						alt="darkblurbg" data-bgfit="cover" data-bgposition="right top"
 						data-bgrepeat="no-repeat">
 
 						<div class="tp-caption revolution-ch5 sft start" data-x="right"
@@ -201,15 +205,15 @@
 							data-hoffset="-14" data-y="210" data-speed="1400"
 							data-start="2000" data-easing="Power4.easeOut"
 							data-endspeed="300" data-endeasing="Power1.easeIn"
-							data-captionhidden="off" style="z-index: 6">
-							Đầy đủ thể loại bạn cần
-						</div> <!-- LAYER -->
+							data-captionhidden="off" style="z-index: 6">Đầy đủ thể loại
+							bạn cần</div> <!-- LAYER -->
 						<div class="tp-caption sft" data-x="right" data-hoffset="0"
 							data-y="300" data-speed="1600" data-start="2800"
 							data-easing="Power4.easeOut" data-endspeed="300"
 							data-endeasing="Power1.easeIn" data-captionhidden="off"
 							style="z-index: 6">
-							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem ngay</a>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-light">Xem
+								ngay</a>
 						</div>
 					</li>
 					<!-- END SLIDE -->
@@ -229,9 +233,11 @@
 							<div class="illustration-bg">
 								<div class="illustration-ads ad-details-v1">
 									<h3>
-										Mừng 30/4 & 1/5 <br><br><strong>GIẢM GIÁ 30% - 60% </strong> 
+										Mừng 30/4 & 1/5 <br> <br> <strong>GIẢM GIÁ
+											30% - 60% </strong>
 									</h3>
-									<a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#">Mua ngay</a>
+									<a class="btn-u btn-brd btn-brd-hover btn-u-light" href="#">Mua
+										ngay</a>
 								</div>
 							</div>
 						</div>
@@ -242,7 +248,8 @@
 						<a class="illustration-v1 illustration-img2" href="#"> <span
 							class="illustration-bg"> <span
 								class="illustration-ads ad-details-v2"> <span
-									class="item-time">Tri ân bạn đọc</span> <br/> <span class="item-name">Giảm giá sốc</span>
+									class="item-time">Tri ân bạn đọc</span> <br /> <span
+									class="item-name">Giảm giá sốc</span>
 							</span>
 						</span>
 						</a>
@@ -254,8 +261,9 @@
 
 			<div class="heading heading-v1 margin-bottom-20">
 				<h2>Sách nổi bật</h2>
-				<p>Tập hợp những đầu sách hay nhất tại Mesach, những quyển sách này luôn trong tình trạng
-				cháy hàng vì được độc giả nhiệt tình đón nhận</p>
+				<p>Tập hợp những đầu sách hay nhất tại Mesach, những quyển sách
+					này luôn trong tình trạng cháy hàng vì được độc giả nhiệt tình đón
+					nhận</p>
 			</div>
 
 			<!--=== Illustration v2 ===-->
@@ -268,8 +276,9 @@
 				<ul class="list-inline owl-slider">
 
 					<c:forEach items="${pwelcome }" var="p">
-						<c:url value="/view/client/static/img/book-img/${p.image}" var="imgUrl"></c:url>
-						
+						<c:url value="/view/client/static/img/book-img/${p.image}"
+							var="imgUrl"></c:url>
+
 						<li class="item">
 							<div class="product-img">
 								<a
@@ -284,16 +293,15 @@
 							</div>
 							<div class="product-description product-description-brd">
 								<div class="overflow-h margin-bottom-5">
-									<div class="pull-left">${p.name }</a>
-										</h4>
-										<span class="gender text-uppercase">${p.category.name }</span>
-										<span class="gender">${p.author}</span>
+									<div class="pull-left"
+										style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${p.name }</a>
+										<span class="gender text-uppercase">${p.author }</span> <span
+											class="gender">${p.category.name}</span>
 									</div>
-									<div class="product-price">
-										<span class="title-price">${p.price } VNĐ</span>
 
-									</div>
+
 								</div>
+								<p class="title-price" style="text-align: right;"><fmt:formatNumber value="${p.price}" /> VNĐ</p>
 								<ul class="list-inline product-ratings">
 									<li><i class="rating-selected fa fa-star"></i></li>
 									<li><i class="rating-selected fa fa-star"></i></li>
@@ -322,9 +330,10 @@
 			<div class="row illustration-v2">
 
 				<c:forEach items="${pwelcome}" var="p">
-					<c:url value="/view/client/static/img/book-img/${p.image}" var="imgUrl"></c:url> 
+					<c:url value="/view/client/static/img/book-img/${p.image}"
+						var="imgUrl"></c:url>
 
-					<div class="col-md-3 col-sm-6 md-margin-bottom-30">
+					<div class="col-md-3 col-sm-6 " style="margin-bottom: 30px">
 						<div class="product-img">
 							<a
 								href="${pageContext.request.contextPath }/product/detail?id=${p.id}"><img
@@ -338,7 +347,7 @@
 						</div>
 						<div class="product-description product-description-brd">
 							<div class="overflow-h margin-bottom-5">
-								<div class="pull-left">
+								<%-- 								<div class="pull-left">
 									<h4 class="title-price">
 										<a
 											href="${pageContext.request.contextPath }/product/detail?id=${p.id}">${p.name }</a>
@@ -350,9 +359,21 @@
 								</div>
 								<div class="product-price">
 									<span class="title-price"> ${p.price } VNĐ</span>
+								</div> --%>
+								<div class="overflow-h margin-bottom-5">
+									<div class="pull-left">
+										<a class="gender"
+											style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: black"><b>${p.name }</b></a>
+										<span class="gender text-uppercase">${p.author }</span> <span
+											class="gender">${p.category.name}</span>
+
+
+									</div>
+
 								</div>
+								<p class="title-price" style="text-align: right;"><fmt:formatNumber value="${p.price}" /> VNĐ</p>
 							</div>
-							<ul class="list-inline product-ratings">
+							<ul class="list-inline product-ratings" style="margin: 1px">
 								<li><i class="rating-selected fa fa-star"></i></li>
 								<li><i class="rating-selected fa fa-star"></i></li>
 								<li><i class="rating-selected fa fa-star"></i></li>
@@ -394,10 +415,10 @@
 
 					<div class="carousel-inner">
 						<div class="item active">
+							<p>Sách mở ra trước mắt tôi những chân trời mới.
 							<p>
-								 Sách mở ra trước mắt tôi những chân trời mới.<p>
 							<p>
-								<a href="https://vi.wikipedia.org/wiki/Maksim_Gorky" >M.Goocki</a>
+								<a href="https://vi.wikipedia.org/wiki/Maksim_Gorky">M.Goocki</a>
 							</p>
 							<ul class="list-inline twitter-icons">
 								<li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -406,10 +427,10 @@
 							</ul>
 						</div>
 						<div class="item">
-							<p>Gặp được một quyển sách hay nên mua liền dù đọc được hay không đọc được, 
-							vì sớm muộn gì cũng cần đến nó.</p>
+							<p>Gặp được một quyển sách hay nên mua liền dù đọc được hay
+								không đọc được, vì sớm muộn gì cũng cần đến nó.</p>
 							<p>
-								<a href="https://vi.wikipedia.org/wiki/Winston_Churchill" >W.Churchill</a>
+								<a href="https://vi.wikipedia.org/wiki/Winston_Churchill">W.Churchill</a>
 							</p>
 							<ul class="list-inline twitter-icons">
 								<li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -418,12 +439,11 @@
 							</ul>
 						</div>
 						<div class="item">
+							<p>Sách là nguồn của cải quý báu của thế giới và là di sản
+								xứng đáng của các thế hệ và các quốc gia.</p>
 							<p>
-								Sách là nguồn của cải quý báu của thế giới và là di sản xứng đáng của các thế hệ và các quốc gia. 
-							
-							</p>
-							<p>
-								<a href="https://vi.wikipedia.org/wiki/Henry_David_Thoreau" >Henry David Thoreau</a>
+								<a href="https://vi.wikipedia.org/wiki/Henry_David_Thoreau">Henry
+									David Thoreau</a>
 							</p>
 							<ul class="list-inline twitter-icons">
 								<li><a href="#"><i class="fa fa-reply"></i></a></li>
@@ -449,7 +469,7 @@
 
 		<div class="container">
 			<!--=== Product Service ===-->
-						<div class="row margin-bottom-60">
+			<div class="row margin-bottom-60">
 				<div class="col-md-4 product-service md-margin-bottom-30">
 					<div class="product-service-heading">
 						<i class="fa fa-truck"></i>
@@ -486,177 +506,100 @@
 
 			<!--=== Illustration v4 ===-->
 			<div class="row illustration-v4 margin-bottom-40">
+
+
 				<div class="col-md-4">
+
 					<div class="heading heading-v1 margin-bottom-20">
 						<h2>Đánh giá cao nhất</h2>
 					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/08.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
+
+					<c:forEach items="${productsBestApprociate}" var="ps">
+						<div class="thumb-product">
+							<img class="thumb-product-img"
+								src="${pageContext.request.contextPath }/view/client/static/img/book-img/${ps.image}"
+								alt="">
+							<div class="thumb-product-in">
+								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+									<a href="shop-ui-inner.html">${ps.name}</a>
+								</h4>
+								<span class="thumb-product-type">${ps.author}</span>
+							</div>
+							<ul class="list-inline overflow-h">
+								<li class="thumb-product-price" style="margin-top: 5px"><fmt:formatNumber value="${ps.price}" /> VNĐ</li>
+								<li class="thumb-product-purchase"><a href="#"><i
+										class="fa fa-shopping-cart"></i></a> | <a href="#"><i
+										class="fa fa-heart"></i></a></li>
+							</ul>
 						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price line-through">$75.00</li>
-							<li class="thumb-product-price">$65.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/09.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/03.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
+					</c:forEach>
 				</div>
+
+
+
+
+
 				<div class="col-md-4">
 					<div class="heading heading-v1 margin-bottom-20">
 						<h2>Bán chạy nhất</h2>
 					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/02.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
+
+					<c:forEach items="${productsBestSeller}" var="ps">
+						<div class="thumb-product">
+							<img class="thumb-product-img"
+								src="${pageContext.request.contextPath }/view/client/static/img/book-img/${ps.image}"
+								alt="">
+							<div class="thumb-product-in">
+								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+									<a href="shop-ui-inner.html">${ps.name}</a>
+								</h4>
+								<span class="thumb-product-type">${ps.author}</span>
+							</div>
+							<ul class="list-inline overflow-h">
+								<li class="thumb-product-price" style="margin-top: 5px"><fmt:formatNumber value="${ps.price}" /> VNĐ</li>
+								<li class="thumb-product-purchase"><a href="#"><i
+										class="fa fa-shopping-cart"></i></a> | <a href="#"><i
+										class="fa fa-heart"></i></a></li>
+							</ul>
 						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/10.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/06.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price line-through">$75.00</li>
-							<li class="thumb-product-price">$65.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
+					</c:forEach>
 				</div>
+
+
+
+
+
 				<div class="col-md-4 padding">
 					<div class="heading heading-v1 margin-bottom-20">
-						<h2>Khuyến mãi</h2>
+						<h2>Đang khuyến mãi</h2>
 					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/07.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
+
+					<c:forEach items="${productsBestPromotion}" var="ps">
+						<div class="thumb-product">
+							<img class="thumb-product-img"
+								src="${pageContext.request.contextPath }/view/client/static/img/book-img/${ps.image}"
+								alt="">
+							<div class="thumb-product-in">
+								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+									<a href="shop-ui-inner.html">${ps.name}</a>
+								</h4>
+								<span class="thumb-product-type">${ps.author}</span>
+							</div>
+							<ul class="list-inline overflow-h">
+							<fmt:setLocale value="vi-VN"/>
+								<li class="thumb-product-price "> <fmt:formatNumber value="${ps.price}" /> VNĐ</li>
+								<li class="thumb-product-price line-through"><fmt:formatNumber value="${ps.price *1.5}" /> VNĐ</li>
+								<li class="thumb-product-purchase"><a href="#"><i
+										class="fa fa-shopping-cart"></i></a> | <a href="#"><i
+										class="fa fa-heart"></i></a></li>
+							</ul>
 						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price line-through">$75.00</li>
-							<li class="thumb-product-price">$65.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/04.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
-					<div class="thumb-product">
-						<img class="thumb-product-img" src="${url}/img/thumb/05.jpg"
-							alt="">
-						<div class="thumb-product-in">
-							<h4>
-								<a href="shop-ui-inner.html">Yuketen</a> – <a
-									href="shop-ui-inner.html">Derby Shoe</a>
-							</h4>
-							<span class="thumb-product-type">Footwear - Oxfords</span>
-						</div>
-						<ul class="list-inline overflow-h">
-							<li class="thumb-product-price">$75.00</li>
-							<li class="thumb-product-purchase"><a href="#"><i
-									class="fa fa-shopping-cart"></i></a> | <a href="#"><i
-									class="fa fa-heart"></i></a></li>
-						</ul>
-					</div>
+					</c:forEach>
+
+
 				</div>
+
+
 			</div>
 			<!--/end row-->
 			<!--=== End Illustration v4 ===-->
@@ -667,7 +610,7 @@
 		<div class="collection-banner">
 			<div class="container">
 				<div class="col-md-7 md-margin-bottom-50">
-					<h2>HƯỞNG ỨNG THÁNG ĐỌC SÁCH </h2>
+					<h2>HƯỞNG ỨNG THÁNG ĐỌC SÁCH</h2>
 					<p>
 						Tri ân bạn đọc<br> Giảm đến 60% cho mỗi đầu sách
 					</p>
@@ -695,35 +638,36 @@
 		<div class="container content">
 			<div class="heading heading-v1 margin-bottom-40">
 				<h2>Nhà tài trợ</h2>
-				<p>Xin chân thành cám ơn các nhà tài trợ, các nhà xuất bản đã cùng hợp tác với Mesach 
-				để đem đến cho độc giả những quyền sách mới nhất, hay nhất và giá tốt nhất</p>
+				<p>Xin chân thành cám ơn các nhà tài trợ, các nhà xuất bản đã
+					cùng hợp tác với Mesach để đem đến cho độc giả những quyền sách mới
+					nhất, hay nhất và giá tốt nhất</p>
 			</div>
 
 			<ul class="list-inline owl-slider-v2">
 				<li class="item first-child"><img
 					src="${url}/img/publisher/kim-dong.jpg" alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/nha-nam.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/thaiha.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/dong-a.jpg" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/dinh-ty.jpg" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/thaiha.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/nha-nam.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png" alt="">
-				</li>
-				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg" alt="">
-				</li>
+				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nha-nam.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/thaiha.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/dong-a.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/dinh-ty.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/thaiha.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nha-nam.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg"
+					alt=""></li>
 			</ul>
 			<!--/end owl-carousel-->
 		</div>

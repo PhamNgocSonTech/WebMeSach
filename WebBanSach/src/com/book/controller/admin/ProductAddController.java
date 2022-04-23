@@ -73,7 +73,7 @@ public class ProductAddController extends HttpServlet {
 					product.setDes(item.getString());
 				} else if (item.getFieldName().equals("image")) {
 					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION
-							+ "/WebContent/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
+							+ "/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
 																				// ABSOLUTE_PROJECT_LOCATION
 					String originalFileName = item.getName(); // Tên của image cũ
 					int index = originalFileName.lastIndexOf(".");

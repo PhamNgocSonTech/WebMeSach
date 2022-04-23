@@ -47,7 +47,6 @@ public class ProductEditController extends HttpServlet {
 		req.setAttribute("publishers", publishers);
 
 		req.setAttribute("product", product);
-		
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/edit-product.jsp");
 		dispatcher.forward(req, resp);
@@ -67,9 +66,9 @@ public class ProductEditController extends HttpServlet {
 			for (FileItem item : items) {
 				if (item.getFieldName().equals("id")) {
 					product.setId(Integer.parseInt(item.getString()));
-				}  else if (item.getFieldName().equals("old-img")) {
+				} else if (item.getFieldName().equals("old-img")) {
 					oldImg = item.getString();
-				}  else if (item.getFieldName().equals("name")) {
+				} else if (item.getFieldName().equals("name")) {
 					product.setName(item.getString());
 				} else if (item.getFieldName().equals("author")) {
 					product.setAuthor(item.getString());
@@ -91,7 +90,12 @@ public class ProductEditController extends HttpServlet {
 					product.setPrice(Long.parseLong(item.getString()));
 				} else if (item.getFieldName().equals("image")) {
 					if (item.getSize() > 0) {// neu co file d
-						final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img" ; // Nhớ đổi đường dẫn của ABSOLUTE_PROJECT_LOCATION
+						final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img"; // Nhớ
+																															// đổi
+																															// đường
+																															// dẫn
+																															// của
+																															// ABSOLUTE_PROJECT_LOCATION
 						String originalFileName = item.getName(); // Tên của image cũ
 						int index = originalFileName.lastIndexOf(".");
 						String ext = originalFileName.substring(index + 1);
@@ -113,7 +117,7 @@ public class ProductEditController extends HttpServlet {
 			productService.edit(product);
 
 			resp.sendRedirect(req.getContextPath() + "/admin/product/list");
-			
+
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
