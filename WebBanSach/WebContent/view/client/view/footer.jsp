@@ -101,7 +101,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<p>
-						2022 &copy; Development by FourTeam <a target="_blank"
+						2022 &copy; Phát triển bởi Nhóm 3  <a target="_blank"
 							href="https://www.facebook.com/vienmv.th">Htmlstream</a> | <a
 							href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
 					</p>

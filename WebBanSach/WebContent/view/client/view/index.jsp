@@ -645,28 +645,26 @@
 
 			<ul class="list-inline owl-slider-v2">
 				<li class="item first-child"><img
-					src="${url}/img/publisher/kim-dong.jpg" alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg"
+					src="${url}/img/publisher/oxford.jpg" alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/california.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/nha-nam.png"
+				<li class="item"><img src="${url}/img/publisher/fact-on-file.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+				<li class="item"><img src="${url}/img/publisher/hachette.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/thaiha.png"
+				<li class="item"><img src="${url}/img/publisher/pearson.png"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/dong-a.jpg"
+				<li class="item"><img src="${url}/img/publisher/cambridge.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+				<li class="item"><img src="${url}/img/publisher/penguin-random-house.png"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/dinh-ty.jpg"
+				<li class="item"><img src="${url}/img/publisher/elsevier.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/thaiha.png"
+				<li class="item"><img src="${url}/img/publisher/routledge.png"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/nha-nam.png"
+				<li class="item"><img src="${url}/img/publisher/scholastic.jpg"
 					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
-					alt=""></li>
-				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg"
+				<li class="item"><img src="${url}/img/publisher/mit-press.jpg"
 					alt=""></li>
 			</ul>
 			<!--/end owl-carousel-->

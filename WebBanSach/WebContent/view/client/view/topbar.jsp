@@ -17,9 +17,9 @@
 			<div class="col-sm-6">
 				<!-- Topbar Navigation -->
 				<ul class="left-topbar">
-					<li><a>Đơn vị hiện tại (VND)</a>
+					<li><a>Đơn vị hiện tại (VNĐ)</a>
 						<ul class="currency">
-							<li class="active"><a href="#">USD <i
+							<li class="active"><a href="#">VNĐ <i
 									class="fa fa-check"></i></a></li>
 							<li><a href="#">Euro</a></li>
 							<li><a href="#">Pound</a></li>
@@ -29,8 +29,8 @@
 							<li class="active"><a href="#">Tiếng Việt (VI)<i
 									class="fa fa-check"></i></a></li>
 							<li><a href="#">Tiếng Anh (EN)</a></li>
-							<li><a href="#">Russian (RUS)</a></li>
-							<li><a href="#">German (GRM)</a></li>
+							<li><a href="#">Tiếng Nga (RUS)</a></li>
+							<li><a href="#">Tiếng Đức (GRM)</a></li>
 						</ul></li>
 				</ul>
 				<!--/end left-topbar-->

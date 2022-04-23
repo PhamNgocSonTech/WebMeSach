@@ -231,7 +231,7 @@
 					<div class="tab-pane fade in active" id="description">
 						<div class="row">
 							<div class="col-md-7">
-								<p>Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện
+								<p>Giá sản phẩm trên Mesach đã bao gồm thuế theo luật hiện
 									hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ
 									giao hàng mà có thể phát sinh thêm chi phí khác như phí vận
 									chuyển, phụ phí hàng cồng kềnh, thuế nhập khẩu (đối với đơn

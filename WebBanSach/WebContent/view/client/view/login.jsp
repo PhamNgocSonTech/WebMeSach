@@ -117,7 +117,7 @@
 						<div class="info-block-v2">
 							<i class="icon icon-settings"></i>
 							<div class="info-block-in">
-								<h3>Nhiều sự kiện khuyến mãi lớn nhằm tri ân bạn đọc Thegioisach.com</h3>
+								<h3>Nhiều sự kiện khuyến mãi lớn nhằm tri ân bạn đọc Mesach.com</h3>
 								<p>Nhiều sự kiện khuyến mãi diễn ra liên tục, giảm giá đến 80%</p>
 							</div>
 						</div>
