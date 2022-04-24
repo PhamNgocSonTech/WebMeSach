@@ -97,11 +97,32 @@
 		<div class="content-md margin-bottom-30">
 			<div class="container">
 				<form class="shopping-cart" action="#">
-					<div>
+
+
+					<c:choose>
+
+						<c:when test="${empty sessionScope.cart}">
+							<div style="text-align: center;">
+								<h1>
+									GIỎ HÀNG <span class="shop-green"> TRỐNG </span>
+								</h1>
+								<p>Mời bạn tiếp tục mua sắm tại Mesach.com</p>
+								<img alt=""
+									src="${pageContext.request.contextPath }\view\client\static\img\empty-shopping-cart.png"
+									style="width: 307px;">
+							</div>
+						</c:when>
+						
+						<c:otherwise>
+						
+						<div>
 						<div class="header-tags">
 							<div class="overflow-h">
 								<h2>GIỎ HÀNG</h2>
-								<p>Xem lại và chỉnh sửa sản phẩm của bạn <i class="rounded-x fa fa-check"></i></p>
+								<p>
+									Xem lại và chỉnh sửa sản phẩm của bạn <i
+										class="rounded-x fa fa-check"></i>
+								</p>
 							</div>
 						</div>
 						<section>
@@ -119,7 +140,8 @@
 										<c:forEach items="${sessionScope.cart}" var="map">
 
 											<tr>
-												<c:url value="/view/client/static/img/book-img/${map.value.product.image}"
+												<c:url
+													value="/view/client/static/img/book-img/${map.value.product.image}"
 													var="imgUrl"></c:url>
 												<td class="product-in-table"><img
 													class="img-responsive" src="${imgUrl}" alt="">
@@ -148,7 +170,7 @@
 
 						<div class="header-tags">
 							<div class="overflow-h">
-								<h2>THANH TOÁN</h2>	
+								<h2>THANH TOÁN</h2>
 								<p>Vui lòng xác minh thông tin trước khi thanh toán</p>
 							</div>
 						</div>
@@ -163,34 +185,72 @@
 												<div class="panel-heading">
 													<h4 class="panel-title">
 														<a data-toggle="collapse" data-parent="#accordion"
-															href="#collapseOne"> <i class="fa fa-home"></i>
-															Địa chỉ nhận hàng
+															href="#collapseOne"> <i class="fa fa-home"></i> Địa
+															chỉ nhận hàng
 														</a>
 													</h4>
 												</div>
 												<div id="collapseOne" class="panel-collapse collapse in">
 													<div class="panel-body cus-form-horizontal">
 														<div class="form-group">
-															<label class="col-sm-4 no-col-space control-label">Họ và tên</label>
+															<label class="col-sm-4 no-col-space control-label">Họ
+																và tên</label>
 															<div class="col-sm-8">
 																<input type="text" class="form-control required"
-																	name="cardholder" placeholder="">
+																	name="cardholder" placeholder="" disabled="disabled"
+																	value="${sessionScope.account.name}">
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-sm-4 no-col-space control-label">Số điện thoại</label>
+															<label class="col-sm-4 no-col-space control-label">Số
+																điện thoại</label>
 															<div class="col-sm-8">
-																<input type="text" class="form-control required"
-																	name="cardnumber" placeholder="">
+
+																<c:choose>
+																	<c:when test="${empty sessionScope.account.phone}">
+																		<input style="border: 1px solid red; color: red"
+																			type="text" class="form-control required"
+																			name="cardnumber" placeholder="" disabled="disabled"
+																			value="(Hãy thiết lập số điện thoại)">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="text" class="form-control required"
+																			name="cardnumber" placeholder="" disabled="disabled"
+																			value="${sessionScope.account.phone}">
+																	</c:otherwise>
+																</c:choose>
+
+
+
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-sm-4 no-col-space control-label">Địa chỉ</label>
+															<label class="col-sm-4 no-col-space control-label">Địa
+																chỉ</label>
 															<div class="col-sm-8 input-small-field">
-																<input type="text" name="number" placeholder=""
-																	class="form-control required"> 
+																<c:choose>
+																	<c:when test="${empty sessionScope.account.address}">
+																		<input style="border: 1px solid red; color: red"
+																			type="text" class="form-control required"
+																			name="cardnumber" placeholder="" disabled="disabled"
+																			value="(Hãy thiết lập địa chỉ giao hàng)">
+																	</c:when>
+																	<c:otherwise>
+																		<input type="text" class="form-control required"
+																			name="cardnumber" placeholder="" disabled="disabled"
+																			value="${sessionScope.account.address}">
+																	</c:otherwise>
+																</c:choose>
 															</div>
 														</div>
+
+														<div style="text-align: center;">
+															<a
+																href="${pageContext.request.contextPath }/member/myaccount"
+																style="text-decoration: none; background-color: #18BA9B; color: white; padding: 8px 16px; margin-top: 15px">Chỉnh
+																sửa thông tin</a>
+														</div>
+
 													</div>
 												</div>
 											</div>
@@ -208,16 +268,19 @@
 												<div class="panel-heading">
 													<h4 class="panel-title">
 														<a data-toggle="collapse" data-parent="#accordion-v2"
-															href="#collapseOne-v2"> Tôi có thể sử dụng phương thức thanh toán nào? </a>
+															href="#collapseOne-v2"> Tôi có thể sử dụng phương
+															thức thanh toán nào? </a>
 													</h4>
 												</div>
 												<div id="collapseOne-v2" class="panel-collapse collapse in">
-													<div class="panel-body">Đến với Mesach việc thanh toán không thể dễ dàng hơn
-													Mesach cung cấp cho bạn 2 phương thức thanh toán khác nhau: 
-													<li>Nhận hàng sau đó thanh toán </li>
-													<li>Chuyển khoản bằng thẻ ngân hàng hoặc Momo </li>
-													
-													
+													<div class="panel-body">
+														Đến với Mesach việc thanh toán không thể dễ dàng hơn
+														Mesach cung cấp cho bạn 2 phương thức thanh toán khác
+														nhau:
+														<li>Nhận hàng sau đó thanh toán</li>
+														<li>Chuyển khoản bằng thẻ ngân hàng hoặc Momo</li>
+
+
 													</div>
 												</div>
 											</div>
@@ -226,15 +289,16 @@
 													<h4 class="panel-title">
 														<a data-toggle="collapse" class="collapsed"
 															data-parent="#accordion-v2" href="#collapseTwo-v2">
-															Tôi có thể sử dụng mã quà tặng để áp dụng khuyến mãi được không?</a>
+															Tôi có thể sử dụng mã quà tặng để áp dụng khuyến mãi được
+															không?</a>
 													</h4>
 												</div>
 												<div id="collapseTwo-v2" class="panel-collapse collapse">
-													<div class="panel-body">Bạn có thể sử dụng mã quà tặng đó vào ô mã ưu đãi để nhận 
-													được giá ưu đãi bạn nhé.</div>
+													<div class="panel-body">Bạn có thể sử dụng mã quà
+														tặng đó vào ô mã ưu đãi để nhận được giá ưu đãi bạn nhé.</div>
 												</div>
 											</div>
-											
+
 											<div class="panel panel-default">
 												<div class="panel-heading">
 													<h4 class="panel-title">
@@ -244,10 +308,10 @@
 													</h4>
 												</div>
 												<div id="collapseFour-v2" class="panel-collapse collapse">
-													<div class="panel-body">Tùy vào khu vực khác nhau sẽ có thời gian
-													nhận hàng khác nhau. Mesach dự kiến khu vực Tp.HCM sẽ nhận được 1 ngày kể từ ngày đặt hàng
-													Các khu vực khác sẽ nhận được hàng khoảng 5 - 6 ngày.
-													</div>
+													<div class="panel-body">Tùy vào khu vực khác nhau sẽ
+														có thời gian nhận hàng khác nhau. Mesach dự kiến khu vực
+														Tp.HCM sẽ nhận được 1 ngày kể từ ngày đặt hàng Các khu vực
+														khác sẽ nhận được hàng khoảng 5 - 6 ngày.</div>
 												</div>
 											</div>
 										</div>
@@ -264,7 +328,8 @@
 									<p>Nhập mã ưu đãi của bạn</p>
 									<input class="form-control margin-bottom-10" name="code"
 										type="text">
-									<button type="button" class="btn-u btn-u-sea-shop">Áp dụng</button>
+									<button type="button" class="btn-u btn-u-sea-shop">Áp
+										dụng</button>
 								</div>
 								<div class="col-sm-3 col-sm-offset-5">
 									<ul class="list-inline total-result">
@@ -293,14 +358,52 @@
 
 											</div>
 										</li>
-										<li>
-										<a href="#" style="text-decoration: none; background-color: #18BA9B; color: white; padding: 8px 16px; display: inline-block; float: right; margin-top: 15px">THANH TOÁN</a>
-										</li>
+
+										<c:choose>
+
+											<c:when
+												test="${(empty sessionScope.account.address) or (empty sessionScope.account.phone) }">
+												<li><a onclick="return false" href="#"
+													style="cursor: not-allowed; text-decoration: none; background-color: #18BA9B; color: white; padding: 8px 16px; display: inline-block; float: right; margin-top: 15px">THANH
+														TOÁN</a></li>
+												<label for="phone"><h4
+														style="color: red; font-size: 14px">(Hãy thiết lập đủ
+														thông tin trước khi thanh toán)</h4></label>
+											</c:when>
+
+											<c:otherwise>
+												<li><a href="#"
+													style="cursor: pointer; text-decoration: none; background-color: #18BA9B; color: white; padding: 8px 16px; display: inline-block; float: right; margin-top: 15px">THANH
+														TOÁN</a></li>
+											</c:otherwise>
+
+										</c:choose>
+
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
+						
+						</c:otherwise>
+
+					</c:choose>
+
+
+
+
+
+
+
+
+					  
+
+
+
+
+
+
+
 				</form>
 			</div>
 			<!--/end container-->

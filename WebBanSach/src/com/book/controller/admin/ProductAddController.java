@@ -86,19 +86,14 @@ public class ProductAddController extends HttpServlet {
 				} else if (item.getFieldName().equals("des")) {
 					product.setDes(item.getString());
 				} else if (item.getFieldName().equals("image")) {
-					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION
-							+ "/view/client/static/img/book-img"; // Nhớ đổi đường dẫn của
-																				// ABSOLUTE_PROJECT_LOCATION
-					String originalFileName = item.getName(); // Tên của image cũ
+					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img";
+					String originalFileName = item.getName();
 					int index = originalFileName.lastIndexOf(".");
 					String ext = originalFileName.substring(index + 1);
 					String fileName = System.currentTimeMillis() + "." + ext; // Tên image mới
 					File file = new File(dir + "/" + fileName);
 					item.write(file);
 					product.setImage(fileName);
-
-//					 VỊ TRÍ LƯU ẢNH:  D:\\GitHub\\WebMeSach\\WebBanSach\\WebContent\\view\\client\\static\\img\\book-img
-//					 TÊN ẢNH: fileName
 				} else if (item.getFieldName().equals("review")) {
 
 					try {

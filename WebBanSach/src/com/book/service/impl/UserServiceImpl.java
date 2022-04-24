@@ -7,6 +7,7 @@ import com.book.dao.UserDao;
 import com.book.dao.impl.UserDaoImpl;
 import com.book.model.User;
 import com.book.service.UserService;
+import com.book.util.Constant;
 
 public class UserServiceImpl implements UserService {
 	UserDao userDao = new UserDaoImpl();
@@ -24,23 +25,40 @@ public class UserServiceImpl implements UserService {
 		oldUser.setUsername(newUser.getUsername());
 		oldUser.setPassword(newUser.getPassword());
 		oldUser.setRoleId(newUser.getRoleId());
-		if (newUser.getAvatar() != null) {
+		oldUser.setName(newUser.getName());
+		oldUser.setAddress(newUser.getAddress());
+		oldUser.setPhone(newUser.getPhone());
+		String fileName = oldUser.getAvatar();
 			// XOA ANH CU DI
-			String fileName = oldUser.getAvatar();
-			final String dir = "C:\\Users\\mai vien\\eclipse-workspace\\UNIFY\\upload";
-			File file = new File(dir + "/" + fileName);
-			if (file.exists()) {
-				file.delete();
+			
+			if (!fileName.equals("default-avt.png") && !fileName.equals(newUser.getAvatar())) {
+				final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/clients" ;
+				File file = new File(dir + "/" + fileName);
+				if (file.exists()) {
+					file.delete();
+				}
 			}
-			// THEM ANH MOI
 			oldUser.setAvatar(newUser.getAvatar());
-		}
-
+			
 		userDao.edit(oldUser);
 	}
 
 	@Override
 	public void delete(int id) {
+		
+		User oldUser = userDao.get(id);
+		
+		// XOA ANH 
+		String fileName = oldUser.getAvatar();
+		
+		if (!fileName.equals("default-avt.png")) {
+			final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img" ;
+			File file = new File(dir + "/" + fileName);
+			if (file.exists()) {
+				file.delete();
+			}
+		}
+	
 		userDao.delete(id);
 	}
 
