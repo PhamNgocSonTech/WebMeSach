@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <c:url value="/view/admin/static" var="url"></c:url>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>List User</title>
+<title>Danh sách người dùng</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -35,8 +35,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>List User</h2>
-						<h5>You can edit , add, delete User</h5>
+						<h2>Danh sách người dùng</h2>
+						<h5>Bạn có thể thêm, sửa, xóa người dùng</h5>
 
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 					<div class="col-md-12">
 						<!-- Advanced Tables -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Advanced Tables</div>
+							<div class="panel-heading">Bảng danh sách người dùng</div>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
@@ -55,13 +55,13 @@
 										<thead>
 											<tr>
 												<th>ID</th>
-												<th>Avatar</th>
+												<th>Hình nền</th>
 												<th>Email</th>
-												<th>User Name</th>
-												<th>Password</th>
-												<th>Status</th>
-												<th> Role </th>
-												<th>Action</th>
+												<th>Tên người dùng</th>
+												<th>Mật khẩu</th>
+												<th>Tình trạng</th>
+												<th> Vai trò </th>
+												<th>Hành động</th>
 												
 
 											</tr>

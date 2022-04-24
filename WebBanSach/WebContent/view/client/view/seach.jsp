@@ -18,7 +18,7 @@
 									
 										<form action="${pageContext.request.contextPath }/product/seach" method="get">
 											<input type="text" name="name" />
-											<input type="submit" value="Seach" style="color: white;margin-top: 10px; background: #18BA9B; border: none; padding: 5px 10px"/>
+											<input type="submit" value="Tìm kiếm" style="color: white;margin-top: 10px; background: #18BA9B; border: none; padding: 5px 10px"/>
 										</form>
 
 									</ul>
