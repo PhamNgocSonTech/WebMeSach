@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 import com.book.dao.UserDao;
 import com.book.jdbc.JDBCConnection;
 import com.book.model.User;
@@ -104,7 +106,33 @@ public class UserDaoImpl extends JDBCConnection implements UserDao {
 		}
 		return null;
 	}
-
+	@Override
+	public User getEmail(String email) {
+		String sql = "select * from [User] Where  email = ? ";
+		Connection conn = super.getJDBCConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				User user = new User();
+				user.setId(rs.getInt("id"));
+				user.setEmail(rs.getString("email"));
+				user.setUsername(rs.getString("username"));
+				user.setPassword(rs.getString("password"));
+				user.setAvatar(rs.getString("avatar"));
+				user.setName(rs.getString("name"));
+				user.setAddress(rs.getString("address"));
+				user.setRoleId(Integer.parseInt(rs.getString("role_id")));
+				return user;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 	@Override
 	public User get(int id) {
 		String sql = "SELECT * FROM [User] WHERE id = ? ";

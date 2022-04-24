@@ -10,6 +10,7 @@ encoding//WebContent/view/client/view/myaccount.jsp=UTF-8
 encoding//WebContent/view/client/view/navbar.jsp=UTF-8
 encoding//WebContent/view/client/view/seach.jsp=UTF-8
 encoding//WebContent/view/client/view/topbar.jsp=UTF-8
+encoding//src/com/book/controller/LoginGoogleController.java=UTF-8
 encoding//src/com/book/controller/RegisterController.java=UTF-8
 encoding//src/com/book/controller/admin/DashboardController.java=UTF-8
 encoding//src/com/book/controller/admin/ProductAddController.java=UTF-8
