@@ -72,16 +72,21 @@
 				<c:url value="/member/myaccount" var="myaccount"></c:url>
 				<form class="form" action="${myaccount }" method="post"
 					id="registrationForm" enctype="multipart/form-data">
-					<input name="role" value="${sessionScope.account.roleId }" hidden="" >
-					<input name="id" value="${sessionScope.account.id }" hidden="">
+					<input name="role" value="${sessionScope.account.roleId }"
+						hidden=""> <input name="id"
+						value="${sessionScope.account.id }" hidden=""> <input
+						type="hidden" value="${sessionScope.account.avatar}"
+						name="old-avt">
 					<div class="text-center">
 
-						<c:url value="/view/client/static/img/clients/${sessionScope.account.avatar}"
+						<c:url
+							value="/view/client/static/img/clients/${sessionScope.account.avatar}"
 							var="imgUrl"></c:url>
 						<img src="${imgUrl }" class="avatar img-circle img-thumbnail"
 							alt="avatar">
 						<h3>Thay đổi ảnh</h3>
-						<input type="file" name="avatar" class="text-center center-block file-upload">
+						<input type="file" name="avatar"
+							class="text-center center-block file-upload">
 					</div>
 					</hr>
 					<br>
@@ -94,13 +99,13 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="home">
 						<hr>
-						
+
 						<div class="form-group">
 
 							<div class="col-xs-6">
 								<label for="first_name"><h4>Họ và tên:</h4></label> <input
-									type="text" class="form-control" name="username"
-									id="first_name" value="${sessionScope.account.name }"
+									type="text" class="form-control" name="name" id="first_name"
+									value="${sessionScope.account.name }"
 									title="enter your first name if any.">
 							</div>
 						</div>
@@ -109,8 +114,8 @@
 
 							<div class="col-xs-6">
 								<label for="first_name"><h4>Tên đăng nhập:</h4></label> <input
-									type="text" class="form-control" name="username"
-									id="first_name" value="${sessionScope.account.username }"
+									type="text" class="form-control" name="username" id="user_name"
+									value="${sessionScope.account.username }"
 									title="enter your first name if any.">
 							</div>
 						</div>
@@ -119,7 +124,7 @@
 
 							<div class="col-xs-6">
 								<label for="first_name"><h4>Email:</h4></label> <input
-									type="text" class="form-control" name="email" id="first_name"
+									type="text" class="form-control" name="email" id="email"
 									value="${sessionScope.account.email }"
 									title="enter your first name if any.">
 							</div>
@@ -128,21 +133,41 @@
 
 							<div class="col-xs-6">
 								<label for="phone"><h4>Mật khẩu</h4></label> <input
-									type="password" class="form-control" name="password" id="phone"
-									value="${sessionScope.account.password }"
+									type="password" class="form-control" name="password"
+									id="password" value="${sessionScope.account.password }"
 									title="enter your phone number if any.">
 							</div>
 						</div>
 
-<!-- 						<div class="form-group">
+						<div class="col-xs-6">
+							<label for="first_name"><h4>Địa chỉ mặc định
+									${warnAddress}</h4></label>
 
-							<div class="col-xs-6">
-								<label for="last_name"><h4>Địa chỉ</h4></label> <input
-									type="text" class="form-control" name="website" id="last_name"
-									value="Tân Phú, TPHCM" title="enter your last name if any."
-									disabled="disabled">
-							</div>
-						</div> -->
+							<c:if test="${empty sessionScope.account.address}">
+								<label for="phone"><h4
+										style="color: red; font-size: 14px">(Vui lòng thiết lập
+										địa chỉ)</h4></label>
+							</c:if>
+
+							<input type="text" class="form-control" name="address"
+								id="address" value="${sessionScope.account.address }"
+								title="enter your first name if any.">
+						</div>
+
+						<div class="col-xs-6">
+							<label for="first_name"><h4>Số điện thoại
+									${warnPhone}</h4></label>
+							<c:if test="${empty sessionScope.account.phone}">
+								<label for="phone"><h4
+										style="color: red; font-size: 14px">(Vui lòng thiết lập
+										số điện thoại)</h4></label>
+							</c:if>
+
+
+							<input type="text" class="form-control" name="phone" id="phone"
+								value="${sessionScope.account.phone }"
+								title="enter your first name if any.">
+						</div>
 
 						<div class="form-group">
 							<div class="col-xs-12">
@@ -150,11 +175,14 @@
 								<button class="btn btn-lg btn-success" type="submit">
 									<i class="glyphicon glyphicon-ok-sign"></i> Lưu
 								</button>
-								<button class="btn btn-lg" type="reset" style="margin-left: 20px">
+								<button class="btn btn-lg" type="reset"
+									style="margin-left: 20px">
 									<i class="glyphicon glyphicon-repeat"></i> Hủy bỏ
 								</button>
 							</div>
 						</div>
+
+
 						</form>
 
 						<hr>

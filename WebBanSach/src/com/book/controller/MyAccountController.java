@@ -20,6 +20,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.book.model.User;
 import com.book.service.UserService;
 import com.book.service.impl.UserServiceImpl;
+import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/member/myaccount" })
 public class MyAccountController extends HttpServlet {
@@ -37,6 +38,7 @@ public class MyAccountController extends HttpServlet {
 		User user = new User();
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+		String old_avt = null;
 
 		try {
 			List<FileItem> items = servletFileUpload.parseRequest(req);
@@ -44,8 +46,22 @@ public class MyAccountController extends HttpServlet {
 				if (item.getFieldName().equals("id")) {
 					id = item.getString();
 					user.setId(Integer.parseInt(item.getString()));
+				} else if (item.getFieldName().equals("old-avt")) {
+					old_avt = item.getString();
 				} else if (item.getFieldName().equals("email")) {
 					user.setEmail(item.getString());
+				} else if (item.getFieldName().equals("address")) {
+					if (item.getString().equals("")) { 
+						user.setAddress(null);
+					} else {
+						user.setAddress(item.getString());;
+					}
+				} else if (item.getFieldName().equals("phone")) {
+					if (item.getString().equals("")) { 
+						user.setPhone(null);
+					} else {
+						user.setPhone(item.getString());
+					}
 				} else if (item.getFieldName().equals("name")) {
 					user.setName(item.getString());
 				} else if (item.getFieldName().equals("username")) {
@@ -56,25 +72,28 @@ public class MyAccountController extends HttpServlet {
 					user.setRoleId(Integer.parseInt(item.getString()));
 				} else if (item.getFieldName().equals("avatar")) {
 					if (item.getSize() > 0) {// neu co file d
-						final String dir = "F:\\upload";
+						final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/clients";
 						String originalFileName = item.getName();
 						int index = originalFileName.lastIndexOf(".");
 						String ext = originalFileName.substring(index + 1);
 						String fileName = System.currentTimeMillis() + "." + ext;
 						File file = new File(dir + "/" + fileName);
 						item.write(file);
-
 						user.setAvatar(fileName);
 					} else {
 						user.setAvatar(null);
 					}
 				}
 			}
+			
+			if (user.getAvatar() == null) {
+				user.setAvatar(old_avt);
+			}
 
 			userService.edit(user);
 			User u = userService.get(Integer.parseInt(id));
 			HttpSession session = req.getSession(true);
-			 session.setAttribute("account", u);
+			session.setAttribute("account", u);
 
 			resp.sendRedirect(req.getContextPath() + "/member/myaccount");
 		} catch (FileUploadException e) {
