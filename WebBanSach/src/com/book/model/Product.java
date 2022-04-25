@@ -30,6 +30,22 @@ public class Product implements Serializable {
 		this.category = category;
 	}
 	
+	
+	
+
+	public Product(int id, String name, long price, String image, String des, Category category, Publisher publisher,
+			String author, String size) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.image = image;
+		this.des = des;
+		this.category = category;
+		this.publisher = publisher;
+		this.author = author;
+		this.size = size;
+	}
 
 	public Product(int id, String name, long price, String image, String des, Category category, Publisher publisher,
 			String author, String size, String embedCode) {
