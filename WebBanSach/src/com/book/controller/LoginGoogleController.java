@@ -74,6 +74,7 @@ public class LoginGoogleController extends HttpServlet {
 				 user.setUsername(googlePojo.getEmail());
 				 user.setEmail(googlePojo.getEmail());
 				 user.setPassword("12456");
+				 user.setAvatar("default-avt.png");
 				 user.setAddress(googlePojo.getLink()); 
 				 user.setRoleId(2);
 				 UserDaoImpl userDaoImpl = new UserDaoImpl();

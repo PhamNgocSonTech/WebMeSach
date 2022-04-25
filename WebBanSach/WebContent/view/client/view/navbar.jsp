@@ -35,7 +35,7 @@
                                 <li><a href="${pageContext.request.contextPath }">Trang Chủ</a></li>
                                 <li><a href="${pageContext.request.contextPath }/product/list">Tìm kiếm</a></li>
                                 <li><a href="${pageContext.request.contextPath }/member/cart">Giỏ hàng</a></li>
-                                <li><a href="${pageContext.request.contextPath }/member/order">Đơn đặt hàng</a></li>
+                                <li><a href="${pageContext.request.contextPath }/member/bill">Đơn đặt hàng</a></li>
                             </ul>
                         </li>
                         <!-- End Pages -->

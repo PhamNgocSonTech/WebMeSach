@@ -89,7 +89,7 @@ public class OrderController extends HttpServlet {
 
 		}
 		session.removeAttribute("cart");
-		resp.sendRedirect(req.getContextPath() + "/");
+		resp.sendRedirect(req.getContextPath() + "/member/bill");
 
 	}
 

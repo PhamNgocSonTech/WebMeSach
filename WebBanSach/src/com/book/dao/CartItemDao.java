@@ -16,6 +16,8 @@ public interface CartItemDao {
 	CartItem get(String name);
 
 	CartItem get(int id);
+	
+	List<CartItem> getUserBill(int id);
 
 	List<CartItem> getAll();
 

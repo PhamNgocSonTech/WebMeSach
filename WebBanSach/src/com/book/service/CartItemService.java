@@ -14,6 +14,8 @@ public interface CartItemService {
 
 	CartItem get(int id);
 	
+	List<CartItem> getUserBill(int id);
+	
 	List<CartItem> getAll();
 
 	List<CartItem> search(String keyword);
