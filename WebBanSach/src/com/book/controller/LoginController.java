@@ -19,10 +19,12 @@ import com.book.util.Constant;
 public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+//
+//<<<<<<< Updated upstream
 		// KIỂM TRA PHIÊN TRƯỚC ĐÓ CÓ ĐĂNG NHẬP CHƯA
 		HttpSession session = req.getSession(false); // Trả về phiên hiện tại, nếu ko có phiên thì thôi
 		if (session != null && session.getAttribute("account") != null) { // Nếu tồn tại phiên làm việc, chuyển đến /waiting
+
 			resp.sendRedirect(req.getContextPath()+ "/waiting");
 			return;
 		}

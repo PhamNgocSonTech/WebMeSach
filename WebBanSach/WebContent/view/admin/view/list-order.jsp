@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <c:url value="/view/admin/static" var="url"></c:url>
@@ -35,7 +36,7 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Quản Lý Đặt Hàng </h2>
+						<h2>Quản Lý Đặt Hàng</h2>
 
 
 					</div>
@@ -56,12 +57,12 @@
 											<tr>
 												<th>Số thứ tự</th>
 												<th>ID</th>
-												<th>Người mua</th>
+												<th>Tên khách hàng</th>
 												<th>Email</th>
-												<th>Ngày</th>
-												<th>Sản phẩm</th>
+												<th>Ngày mua</th>
+												<th>Tên Sản phẩm</th>
 												<th>Số lượng</th>
-												<th>Gía</th>
+												<th>Đơn giá</th>
 												<th>Tổng cộng</th>
 												<th>Tình trạng</th>
 												<th>Hoạt động</th>
@@ -77,13 +78,13 @@
 													<c:set var="index" value="${index + 1}" />
 													<td>${index }</td>
 													<td>${list.id }</td>
-													<td>${list.cart.buyer.username }</td>
+													<td>${list.cart.buyer.name }</td>
 													<td>${list.cart.buyer.email }</td>
 													<td>${list.cart.buyDate }</td>
 													<td>${list.product.name }</td>
 													<td>${list.quantity }</td>
-													<td>$ ${list.product.price }</td>
-													<td>$ ${ list.quantity * list.product.price }</td>
+													<td><fmt:formatNumber value="${list.product.price}" /> VNĐ</td>
+													<td><fmt:formatNumber value="${list.quantity *list.product.price}" /> VNĐ</td>
 													<td class="center">Đang xử lý</td>
 
 

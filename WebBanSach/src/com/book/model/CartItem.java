@@ -17,6 +17,8 @@ public class CartItem {
 		this.product = product;
 		this.cart = cart;
 	}
+	
+	
 	public String getId() {
 		return id;
 	}
@@ -47,6 +49,7 @@ public class CartItem {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
+	
 
 	
 }

@@ -70,7 +70,7 @@ public class RegisterController extends HttpServlet {
 			return;
 		} else {
 		
-		User user = new User(email, username, password, "default-avt.png", 2, name, null);
+		User user = new User(email, username, password, "default-avt.png", 2, name, null, null);
 
 		boolean isSuccess = service.register(user);
 
