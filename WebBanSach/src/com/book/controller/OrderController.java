@@ -3,7 +3,9 @@ package com.book.controller;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.sql.Date;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -53,28 +55,37 @@ public class OrderController extends HttpServlet {
 			for (CartItem cartItem : map.values()) {
 				cartItem.setCart(cart);
 				cartItem.setId(RandomUUID.getRandomID());
-				SendMail sm = new SendMail();
-				sm.sendMail(cart.getBuyer().getEmail(), "Mesach.com - Cảm ơn bạn đã ủng hộ", 
-						"<!DOCTYPE html>\n"
-				                + "<html lang=\"en\">\n"
-				                + "\n"
-				                + "<head>\n"
-				                + "</head>\n"
-				                + "\n"
-				                + "<body>\n"
-				                + "    <h3 style=\"color: blue;\">Đơn hàng của bạn đang được xử lý</h3>\n"
-				                + "    <div>Qùa tặng bạn: Mã giảm giá 30K khi thanh toán hóa đơn từ 200K: UKSH23D13</div>\n"
-				                + "    <div>Cảm ơn bạn đã tin tưởng và lựa chọn Mesach.com</div>\n"
-				                + "    <div>Địa chỉ: 120 Võ Văn Tần, TP.HCM</div>\n"
-				                + "    <h3 style=\"color: blue;\">Chúc bạn một ngày mới tốt lành ^^ </h3>\n"
-				                + "\n"
-				                + "</body>\n"
-				                + "\n"
-				                + "</html>");
-
 				cartItemService.insert(cartItem);
 				
 			}
+			SendMail sm = new SendMail();
+			sm.sendMail(cart.getBuyer().getEmail(), "Mesach.com - Cảm ơn bạn đã ủng hộ", 
+					"<!DOCTYPE html>\n"
+			                + "<html lang=\"en\">\n"
+			                + "\n"
+			                + "<head>\n"
+			                + "</head>\n"
+			                + "\n"
+			                + "<body>\n"
+			                + "    <h2 style=\"color: blue;\">Đơn hàng của bạn đang được xử lý</h2>\n"
+			                + "    <h3 style=\"color: blue;\">Thông tin đơn hàng của bạn</h3>\n"
+			                + "<table>\r\n"
+			                + "             <tr>\r\n"
+			                + "               <th>Tên sách</th>\r\n"
+			                + "               <th>Số lượng</th>\r\n"
+			                + "               <th>Giá tiền</th>\r\n"
+			                + "               <th>Thành tiền</th>\r\n"
+			                + "             </tr>\r\n" 
+			                + getHTMLBookData(map)
+			                + "</table> <br/>"
+			                + "    <div>Quà tặng bạn: Mã giảm giá 30K khi thanh toán hóa đơn từ 200K: <b>UKSH23D13</b></div>\n"
+			                + "    <div>Cảm ơn bạn đã tin tưởng và lựa chọn Mesach.com</div>\n"
+			                + "    <div>Địa chỉ: 120 Võ Văn Tần, TP.HCM</div>\n"
+			                + "    <h3 style=\"color: blue;\">Chúc bạn một ngày mới tốt lành ^^ </h3>\n"
+			                + "\n"
+			                + "</body>\n"
+			                + "\n"
+			                + "</html>");
 
 		}
 		session.removeAttribute("cart");
@@ -85,5 +96,23 @@ public class OrderController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
+	}
+	
+	public String getHTMLBookData(Map<Integer, CartItem> map) {
+		Locale localeVN = new Locale("vi", "VN");
+		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+		double total = 0;
+		String val = "";
+        for (CartItem cartItem : map.values()) {
+        	total += cartItem.getQuantity() * cartItem.getUnitPrice();
+        val  += "<tr>\r\n"
+             +  "<td>" + cartItem.getProduct().getName() +  "</td>\r\n"
+	         +  "<td>" + cartItem.getQuantity() +  "</td>\r\n"
+	         +  "<td>" + currencyVN.format(cartItem.getUnitPrice()) +  "</td>\r\n"
+	         +  "<td>" + currencyVN.format(cartItem.getQuantity() * cartItem.getUnitPrice()) +  "</td>\r\n"
+             +  "<tr>\r\n";
+		}
+        val += "<h4 style=\"color: red;\">Tổng cộng: " + currencyVN.format(total) + "</h4>\n";
+        return val;
 	}
 }

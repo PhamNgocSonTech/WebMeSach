@@ -112,6 +112,7 @@ public class CartItemDaoImpl extends JDBCConnection implements CartItemDao {
 				"cart.buyDate, " + 
 				"product.name, " + 
 				"product.price " + 
+				"User.name " +
 				"FROM CartItem " + 
 				"INNER JOIN Cart " + 
 				"ON CartItem.cart_id = cart.id " + 
@@ -135,6 +136,7 @@ public class CartItemDaoImpl extends JDBCConnection implements CartItemDao {
 				Product product = new Product();
 				product.setName(rs.getString("name"));
 				product.setPrice(rs.getLong("price"));
+
 				
 				CartItem cartItem = new CartItem();
 				cartItem.setCart(cart);
