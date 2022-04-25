@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Danh sách người dùng</title>
+<title>Quản lý người dùng</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->

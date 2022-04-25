@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Edit User</title>
+<title>Chỉnh sửa  người dùng</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -28,8 +28,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Edit User</h2>
-						<h5>You can edit info user in here</h5>
+						<h2>Chỉnh sửa người dùng</h2>
+						<h5>Bạn có thể chỉnh sửa thông tin người dùng tại đây</h5>
 					</div>
 				</div>
 				<!-- /. ROW  -->
@@ -38,7 +38,7 @@
 					<div class="col-md-12">
 						<!-- Form Elements -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Info you can change</div>
+							<div class="panel-heading">Thông tin bạn có thể đổi</div>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
@@ -48,11 +48,11 @@
 											enctype="multipart/form-data">
 											<input name="id" value="${user.id }" type="text" hidden="">
 											<div class="form-group">
-												<label>User Name:</label> <input class="form-control"
+												<label>Tên người dùng:</label> <input class="form-control"
 													value="${user.username }" name="username" />
 											</div>
 											<div class="form-group">
-												<label>Password</label> <input class="form-control"
+												<label>Mật khẩu</label> <input class="form-control"
 													value="${user.password }" type="password" name="password" />
 											</div>
 											<div class="form-group">
@@ -60,22 +60,22 @@
 													value="${user.email }" name="email" />
 											</div>
 											<div class="form-group">
-												<label>Role</label>
+												<label>Vai trò</label>
 												<div class="checkbox">
 													<label> <input type="radio" value="1" name="role" />Admin
 													</label> <br> <label> <input type="radio" value="2"
-														name="role" checked="checked"/>Client
+														name="role" checked="checked"/>khách hàng
 													</label>
 												</div>
 
 											</div>
 
 											<div class="form-group">
-												<label>Choose Avatar</label> <input type="file"
+												<label>Hình ảnh</label> <input type="file"
 													name="avatar" />
 											</div>
-											<button type="submit" class="btn btn-default">Edit</button>
-											<button type="reset" class="btn btn-primary">Reset</button>
+											<button type="submit" class="btn btn-default">Sửa</button>
+											<button type="reset" class="btn btn-primary">Đặt lại</button>
 										</form>
 
 

@@ -7,7 +7,7 @@
 <head>
 <c:url value="/view/client/static" var="url"></c:url>
 <meta charset="UTF-8">
-<title>Product Details</title>
+<title>Chi tiết sản phẩm</title>
 <!-- Favicon -->
 <link rel="shortcut icon" href="favicon.ico">
 

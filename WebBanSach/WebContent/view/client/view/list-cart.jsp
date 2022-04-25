@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add to Cart</title>
+<title>Thêm vào giỏ hàng</title>
 <!-- Favicon -->
 <link rel="shortcut icon" href="favicon.ico">
 <c:url value="/view/client/static" var="url"></c:url>

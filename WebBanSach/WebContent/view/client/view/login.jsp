@@ -6,7 +6,7 @@
 <head>
 <c:url value="/view/client/static" var="url"></c:url>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Đăng nhập</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">

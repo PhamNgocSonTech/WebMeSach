@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <c:url value="/view/admin/static" var="url"></c:url>
 <!DOCTYPE html>
 <html>
@@ -49,8 +49,8 @@
 								class="fa fa-envelope-o"></i>
 							</span>
 							<div class="text-box">
-								<p class="main-text">120 New</p>
-								<p class="text-muted">Messages</p>
+								<p class="main-text">120 mới</p>
+								<p class="text-muted">Tin nhắn</p>
 							</div>
 						</div>
 					</div>
@@ -61,8 +61,8 @@
 							</span>
 							<div class="text-box">
 
-								<p class="main-text">30 Tasks</p>
-								<p class="text-muted">Remaining</p>
+								<p class="main-text">30 công việc</p>
+								<p class="text-muted">Vẫn còn</p>
 							</div>
 						</div>
 					</div>
@@ -72,8 +72,8 @@
 								class="fa fa-bell-o"></i>
 							</span>
 							<div class="text-box">
-								<p class="main-text">240 New</p>
-								<p class="text-muted">Notifications</p>
+								<p class="main-text">240 Mới</p>
+								<p class="text-muted">Thông báo</p>
 							</div>
 						</div>
 					</div>
@@ -83,8 +83,8 @@
 								class="fa fa-rocket"></i>
 							</span>
 							<div class="text-box">
-								<p class="main-text">3 Orders</p>
-								<p class="text-muted">Pending</p>
+								<p class="main-text">3 Đơn đặt </p>
+								<p class="text-muted">Đang xử lý</p>
 							</div>
 						</div>
 					</div>
