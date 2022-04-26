@@ -34,7 +34,7 @@ public class CategoryeListController extends HttpServlet {
 
 		
 		req.setAttribute("cateList", cateList);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/category/list-category.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/list-category.jsp");
 		dispatcher.forward(req, resp);
 	}
 

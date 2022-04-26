@@ -175,14 +175,14 @@
 							<div class="row columns-space-removes">
 								<div class="col-lg-6 margin-bottom-10">
 									<button type="button" class="btn-u btn-u-md btn-u-fb btn-block">
-										<i class="fa fa-facebook"></i> Facebook LogIn
+										<i class="fa fa-facebook"></i> Login With Facebook
 									</button>
 								</div>
 								<div class="col-lg-6">
 									<button type="button" class="btn-u btn-u-md btn-u-tw btn-block">
-										<a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/WebBanSach/login-google&response_type=code
+										<a style="color: white; text-decoration: none" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/WebBanSach/login-google&response_type=code
    											 &client_id=625667945799-tmm6huk68662am4dvhtucbapp2ld64di.apps.googleusercontent.com&approval_prompt=force">
-   											 login with google
+   											 <i class="fa fa-google"></i> Login With Google
    											 </a>
 									</button>
 								</div>

@@ -42,7 +42,7 @@ public class LoginGoogleController extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		if (session != null && session.getAttribute("account") != null) {
-			response.sendRedirect(request.getContextPath()+ "/waiting");
+			response.sendRedirect(request.getContextPath() + "/waiting");
 			return;
 		}
 		// Check cookie
@@ -52,7 +52,7 @@ public class LoginGoogleController extends HttpServlet {
 				if (cookie.getName().equals("username")) {
 					session = request.getSession(true);
 					session.setAttribute("username", cookie.getValue());
-					response.sendRedirect(request.getContextPath()+ "/waiting");
+					response.sendRedirect(request.getContextPath() + "/waiting");
 					return;
 				}
 			}
@@ -63,38 +63,37 @@ public class LoginGoogleController extends HttpServlet {
 			dis.forward(request, response);
 			return;
 		} else {
-			
+
 			String accessToken = GoogleUtils.getToken(code);
 			GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
 			UserDaoImpl userdao = new UserDaoImpl();
 			User user = userdao.getEmail(googlePojo.getEmail());
-			if(user == null) {
-				 user = new User();
-				 user.setName(userName(googlePojo.getEmail()));
-				 user.setUsername(googlePojo.getEmail());
-				 user.setEmail(googlePojo.getEmail());
-				 user.setPassword("12456");
-				 user.setAvatar("default-avt.png");
-				 user.setAddress(googlePojo.getLink()); 
-				 user.setRoleId(2);
-				 UserDaoImpl userDaoImpl = new UserDaoImpl();
-				 userDaoImpl.insert(user);
+
+			if (user == null) {
+				user = new User();
+				user.setName(userName(googlePojo.getEmail()));
+				user.setUsername(googlePojo.getEmail());
+				user.setEmail(googlePojo.getEmail());
+				user.setPassword("12456");
+				user.setAvatar("default-avt.png");
+				user.setAddress(googlePojo.getLink());
+				user.setRoleId(2);
+				UserDaoImpl userDaoImpl = new UserDaoImpl();
+				userDaoImpl.insert(user);
 			}
+
 			boolean isRememberMe = true;
-			if(user!=null){
-	            session = request.getSession(true);
-	            session.setAttribute("account", user);
+			if (user != null) {
 
-	            if(isRememberMe){
-	                saveRemeberMe(response, user.getEmail());
-	            }
-	           
-	            response.sendRedirect(request.getContextPath()+"/waiting");
+				session = request.getSession(true);
+				session.setAttribute("account", user);
 
-	        }
-			 
-			 
+				if (isRememberMe) {
+					saveRemeberMe(response, user.getEmail());
+				}
 
+				response.sendRedirect(request.getContextPath() + "/waiting");
+			}
 		}
 	}
 
@@ -102,16 +101,18 @@ public class LoginGoogleController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	private void saveRemeberMe(HttpServletResponse response, String username){
-        Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);
-        cookie.setMaxAge(30*60);
-        response.addCookie(cookie);
-    }
+	private void saveRemeberMe(HttpServletResponse response, String username) {
+		Cookie cookie = new Cookie(Constant.COOKIE_REMEMBER, username);
+		cookie.setMaxAge(30 * 60);
+		response.addCookie(cookie);
+	}
+
 	private String userName(String Email) {
-			int index = Email.indexOf("@");
-			String userName = Email.substring(0, index);
+		int index = Email.indexOf("@");
+		String userName = Email.substring(0, index);
 		return userName;
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

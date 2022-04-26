@@ -521,7 +521,7 @@
 								alt="">
 							<div class="thumb-product-in">
 								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-									<a href="shop-ui-inner.html">${ps.name}</a>
+									<a href="${pageContext.request.contextPath}/product/detail?id=${ps.id}">${ps.name}</a>
 								</h4>
 								<span class="thumb-product-type">${ps.author}</span>
 							</div>
@@ -551,7 +551,7 @@
 								alt="">
 							<div class="thumb-product-in">
 								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-									<a href="shop-ui-inner.html">${ps.name}</a>
+									<a href="${pageContext.request.contextPath}/product/detail?id=${ps.id}"">${ps.name}</a>
 								</h4>
 								<span class="thumb-product-type">${ps.author}</span>
 							</div>
@@ -581,7 +581,7 @@
 								alt="">
 							<div class="thumb-product-in">
 								<h4 style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-									<a href="shop-ui-inner.html">${ps.name}</a>
+									<a href="${pageContext.request.contextPath}/product/detail?id=${ps.id}"">${ps.name}</a>
 								</h4>
 								<span class="thumb-product-type">${ps.author}</span>
 							</div>
