@@ -45,19 +45,42 @@
 										<h3>Người dùng:</h3>
 										
 										<form role="form" action="add"  method="post" enctype="multipart/form-data">
+										
+										<div class="form-group">
+												<label>Email:</label> <input class="form-control"
+													placeholder="Nhập email" name="email" />
+											</div>
+											
 											<div class="form-group">
 												<label>Tên người dùng:</label> <input class="form-control"
-													placeholder="please enter username" name="username" />
+													placeholder="Nhập tên người dùng" name="username" />
 											</div>
 											<div class="form-group">
 												<label>Mật khẩu</label> <input class="form-control"
-													placeholder="please enter password" type="password"
+													placeholder="Nhập mật khẩu" type="password"
 													name="password" />
 											</div>
-											<div class="form-group">
-												<label>Email:</label> <input class="form-control"
-													placeholder="Please enter email" name="email" />
+											
+												<div class="form-group">
+												<label>Tên</label> <input class="form-control"
+													placeholder="Nhập tên" type="text"
+													name="name" />
 											</div>
+											
+												<div class="form-group">
+												<label>Địa chỉ</label> <input class="form-control"
+													placeholder="Nhập địa chỉ" type="text"
+													name="address" />
+											</div>
+											
+												<div class="form-group">
+												<label>Số điện thoại</label> <input class="form-control"
+													placeholder="Nhập số điện thoại" type="text"
+													name="phone" />
+											</div>
+											
+											
+											
 											<div class="form-group">
 												<label>Vai trò</label>
 												<div class="checkbox">

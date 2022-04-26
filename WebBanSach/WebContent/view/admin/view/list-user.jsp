@@ -49,6 +49,11 @@
 						<div class="panel panel-default">
 							<div class="panel-heading">Bảng danh sách người dùng</div>
 							<div class="panel-body">
+							
+							<a href="${pageContext.request.contextPath }/admin/user/add"
+								class="btn btn-primary btn-block text-uppercase mb-3"
+								style="width: 170px; margin: 10px 10px 0px 10px; display: inline-block;">Thêm người dùng mới</a>
+								
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
 										id="dataTables-example">
