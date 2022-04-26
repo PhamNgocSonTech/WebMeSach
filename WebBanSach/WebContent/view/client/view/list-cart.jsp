@@ -372,7 +372,7 @@
 											</c:when>
 
 											<c:otherwise>
-												<li><a href="#"
+												<li><a href="${pageContext.request.contextPath}/member/order"
 													style="cursor: pointer; text-decoration: none; background-color: #18BA9B; color: white; padding: 8px 16px; display: inline-block; float: right; margin-top: 15px">THANH
 														TOÁN</a></li>
 											</c:otherwise>
