@@ -69,7 +69,7 @@ public class OrderController extends HttpServlet {
 			                + "<body>\n"
 			                + "    <h2 style=\"color: blue;\">Đơn hàng của bạn đang được xử lý</h2>\n"
 			                + "    <h3 style=\"color: blue;\">Thông tin đơn hàng của bạn</h3>\n"
-			                + "<table>\r\n"
+			                + "<table style = \"border: 1px solid #ccc\">\r\n"
 			                + "             <tr>\r\n"
 			                + "               <th>Tên sách</th>\r\n"
 			                + "               <th>Số lượng</th>\r\n"
