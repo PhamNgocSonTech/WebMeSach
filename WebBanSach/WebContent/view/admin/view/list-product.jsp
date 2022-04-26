@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Quản lý sản phẩm</title>
+<title>Danh sách sản phẩm</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -53,7 +53,7 @@
 							<div class="panel-heading">Bảng thông tin sản phẩm</div>
 							<a href="${pageContext.request.contextPath }/admin/product/add"
 								class="btn btn-primary btn-block text-uppercase mb-3"
-								style="width: 170px; margin: 10px 10px 0 10px; display: inline-block;">Thêm sản
+								style="width: 170px; margin: 10px 10px 0 10px; display: inline-block ;">Thêm sản
 								phẩm mới</a>
 								<a href="${pageContext.request.contextPath}/export-excel"
 								class="btn btn-primary btn-block text-uppercase mb-3"

@@ -19,6 +19,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.book.model.User;
 import com.book.service.UserService;
 import com.book.service.impl.UserServiceImpl;
+import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/user/add" })
 public class UserAddController extends HttpServlet {
@@ -51,14 +52,21 @@ public class UserAddController extends HttpServlet {
 			for (FileItem item : items) {
 				if (item.getFieldName().equals("email")) {
 					user.setEmail(item.getString());;
-				} else if (item.getFieldName().equals("username")) {
+				}  else if (item.getFieldName().equals("username")) {
 					user.setUsername(item.getString());
+				}  else if (item.getFieldName().equals("name")) {
+					user.setName(item.getString());
 				} else if (item.getFieldName().equals("password")) {
 					user.setPassword(item.getString());
+				} else if (item.getFieldName().equals("phone")) {
+					user.setPhone(item.getString());
+		
+				} else if (item.getFieldName().equals("address")) {
+					user.setAddress(item.getString());
 				} else if (item.getFieldName().equals("role")) {
 					user.setRoleId(Integer.parseInt(item.getString()));;
 				} else if (item.getFieldName().equals("avatar")) {
-					final String dir = "F:\\upload";
+					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/clients/";
 					String originalFileName = item.getName();
 					int index = originalFileName.lastIndexOf(".");
 					String ext = originalFileName.substring(index + 1);
