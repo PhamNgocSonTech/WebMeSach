@@ -28,6 +28,7 @@ import com.book.service.impl.CategoryServiceImpl;
 import com.book.service.impl.ProductServiceImpl;
 import com.book.service.impl.PublisherServiceImp;
 import com.book.service.impl.UserServiceImpl;
+import com.book.tools.StringConvert;
 import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/product/edit" })
@@ -60,21 +61,22 @@ public class ProductEditController extends HttpServlet {
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
 		String oldImg = null;
-		
+		String itemUTF8;
 
 
 		try {
 			List<FileItem> items = servletFileUpload.parseRequest(req);
-
+			
 			for (FileItem item : items) {
+				itemUTF8 = StringConvert.itemGetString_UTF_8(item);
 				if (item.getFieldName().equals("id")) {
 					product.setId(Integer.parseInt(item.getString()));
 				} else if (item.getFieldName().equals("old-img")) {
 					oldImg = item.getString();
 				} else if (item.getFieldName().equals("name")) {
-					product.setName(item.getString());
+					product.setName(itemUTF8);
 				} else if (item.getFieldName().equals("author")) {
-					product.setAuthor(item.getString());
+					product.setAuthor(itemUTF8);
 				} else if (item.getFieldName().equals("publisher")) {
 					product.setPublisher(publisherService.getPublisher(Integer.parseInt(item.getString())));
 				} else if (item.getFieldName().equals("review")) {
@@ -88,7 +90,7 @@ public class ProductEditController extends HttpServlet {
 				} else if (item.getFieldName().equals("cate")) {
 					product.setCategory(categoryService.get(Integer.parseInt(item.getString())));
 				} else if (item.getFieldName().equals("des")) {
-					product.setDes(item.getString());
+					product.setDes(itemUTF8);
 				} else if (item.getFieldName().equals("price")) {
 					product.setPrice(Long.parseLong(item.getString()));
 				} else if (item.getFieldName().equals("image")) {

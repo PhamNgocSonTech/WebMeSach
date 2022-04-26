@@ -29,6 +29,7 @@ import com.book.service.impl.CategoryServiceImpl;
 import com.book.service.impl.ProductServiceImpl;
 import com.book.service.impl.PublisherServiceImp;
 import com.book.service.impl.UserServiceImpl;
+import com.book.tools.StringConvert;
 import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/product/add" })
@@ -44,7 +45,6 @@ public class ProductAddController extends HttpServlet {
 
 		req.setAttribute("categories", categories);
 		req.setAttribute("publishers", publishers);
-		
 		/*
 		 * //sửa lỗi font resp.setContentType("text/html;charset=UTF-8");
 		 * req.setCharacterEncoding("utf-8");
@@ -61,22 +61,21 @@ public class ProductAddController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		Product product = new Product();
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
 		
-	
 		
 		
-
 		try {
+			//servletFileUpload.setHeaderEncoding(req.getCharacterEncoding());
 			List<FileItem> items = servletFileUpload.parseRequest(req);
 			for (FileItem item : items) {
+				String itemUTF8 = StringConvert.itemGetString_UTF_8(item);
 				if (item.getFieldName().equals("name")) {
-					product.setName(item.getString());
+					product.setName(itemUTF8);
 				} else if (item.getFieldName().equals("author")) {
-					product.setAuthor(item.getString());
+					product.setAuthor(itemUTF8);
 				} else if (item.getFieldName().equals("category")) {
 					product.setCategory(categoryService.get(Integer.parseInt(item.getString())));
 				} else if (item.getFieldName().equals("publisher")) {
@@ -84,7 +83,7 @@ public class ProductAddController extends HttpServlet {
 				} else if (item.getFieldName().equals("price")) {
 					product.setPrice(Long.parseLong(item.getString()));
 				} else if (item.getFieldName().equals("des")) {
-					product.setDes(item.getString());
+					product.setDes(itemUTF8);
 				} else if (item.getFieldName().equals("image")) {
 					final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/book-img";
 					String originalFileName = item.getName();
