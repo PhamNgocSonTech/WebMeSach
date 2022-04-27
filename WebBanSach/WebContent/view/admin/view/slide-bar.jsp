@@ -19,8 +19,8 @@
 							class="fa fa-bar-chart-o fa-3x"></i> Quản lý đặt hàng</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/category/list"><i class="fa fa-table fa-3x"></i>
 							Quản lý thể loại</a></li>
-					<li><a href="form.html"><i class="fa fa-edit fa-3x"></i>
-							Forms </a></li>
+					<li><a href=${pageContext.request.contextPath}/admin/publisher/list><i class="fa fa-edit fa-3x"></i>
+							Quản lý nhà xuất bản </a></li>
 
 
 					<li><a href="#"><i class="fa fa-sitemap fa-3x"></i>

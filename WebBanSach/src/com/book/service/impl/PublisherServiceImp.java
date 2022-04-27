@@ -13,19 +13,26 @@ public class PublisherServiceImp implements PublisherService{
 	@Override
 	public void insert(Publisher publisher) {
 		// TODO Auto-generated method stub
-		
+		imp.insert(publisher);
 	}
 
 	@Override
 	public void edit(Publisher publisher) {
 		// TODO Auto-generated method stub
-		
+		Publisher oldPublisher = getPublisher(publisher.getPublisher_id());
+		if(oldPublisher !=null) {
+			oldPublisher.setPublisher_name(publisher.getPublisher_name());
+			imp.edit(oldPublisher);
+		}
 	}
 
 	@Override
 	public void delete(int id) {
 		// TODO Auto-generated method stub
-		
+		Publisher pls = getPublisher(id);
+		if(pls != null) {
+			imp.delete(pls.getPublisher_id());
+		}
 	}
 
 	@Override
