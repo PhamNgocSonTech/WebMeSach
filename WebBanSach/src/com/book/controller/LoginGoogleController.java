@@ -63,9 +63,10 @@ public class LoginGoogleController extends HttpServlet {
 			dis.forward(request, response);
 			return;
 		} else {
-
+//			LoginGoogleController sẽ nhận đoạn mã trả về từ google, 
 			String accessToken = GoogleUtils.getToken(code);
 			GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
+//			Đổi mã đó thành access-token rồi dùng access-token để truy cập các thông tin trong tài khoản google như email, name, id…
 			UserDaoImpl userdao = new UserDaoImpl();
 			User user = userdao.getEmail(googlePojo.getEmail());
 

@@ -645,7 +645,21 @@
 
 			<ul class="list-inline owl-slider-v2">
 				<li class="item first-child"><img
-					src="${url}/img/publisher/oxford.jpg" alt=""></li>
+					src="${url}/img/publisher/ipm.jpg" alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nha-nam.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/dinh-ty.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/dong-a.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/kim-dong.jpg"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/nxb-tre.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/thaiha.png"
+					alt=""></li>
+				<li class="item"><img src="${url}/img/publisher/alpha-book.jpg"
+					alt=""></li>
 				<li class="item"><img src="${url}/img/publisher/california.jpg"
 					alt=""></li>
 				<li class="item"><img src="${url}/img/publisher/fact-on-file.jpg"

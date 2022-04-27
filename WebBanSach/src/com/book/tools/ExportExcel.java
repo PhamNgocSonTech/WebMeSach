@@ -143,7 +143,6 @@ public class ExportExcel extends HttpServlet {
 	public static List<Product> getAllDataFromDB()  {
 		
 		//req.getServletContext().getRealPath("/book-img")
-
 		List<Product> productList = new ArrayList<Product>();
 		String sql = "SELECT product.author, product.size, product.embedCode, Publisher.publisher_name,Publisher.publisher_id ,product.id, product.name AS p_name, product.price, product.image, product.des , category.cate_name AS c_name, category.cate_id AS c_id  "
 				+ "FROM product INNER JOIN category " + "ON product.cate_id = category.cate_id" + " INNER JOIN publisher " + " ON product.publisher_id = publisher.publisher_id";
