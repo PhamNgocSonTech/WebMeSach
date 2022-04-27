@@ -298,13 +298,13 @@
 
 				<ul class="list-inline owl-slider-v4" style="text-align: center;">
 					<c:forEach items="${rproduct}" var="r">
-						<li class="item"><a href="#"><img class="img-responsive"
+						<li class="item"><a href="${pageContext.request.contextPath }/product/detail?id=${r.id}"><img class="img-responsive"
 								src="${pageContext.request.contextPath}/view/client/static/img/book-img/${r.image}"
 								alt=""></a>
 							<div class="product-description-v2">
 								<div class="margin-bottom-5">
 									<h4 class="title-price" style="max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-										<a href="#">${r.name}</a>
+										<a href="${pageContext.request.contextPath }/product/detail?id=${r.id}">${r.name}</a>
 									</h4>
 									<span class="title-price"><fmt:formatNumber
 											value="${r.price}" /> VNĐ <br> </span> <span

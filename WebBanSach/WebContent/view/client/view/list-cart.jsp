@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -149,9 +150,9 @@
 														<h3>${map.value.product.name }</h3>
 														<span>${map.value.product.author }</span>
 													</div></td>
-												<td>$ ${map.value.product.price }</td>
+												<td><fmt:formatNumber value="${map.value.product.price}" /> VNĐ</td>
 												<td>${map.value.quantity }</td>
-												<td class="shop-red">$ ${map.value.product.price * map.value.quantity }</td>
+												<td class="shop-red"><fmt:formatNumber value="${map.value.product.price * map.value.quantity}"/> VNĐ</td>
 												<td><a
 													href="${pageContext.request.contextPath}/member/cart/remove?pId=${map.value.product.id}"><button
 															type="button" class="close">
@@ -340,7 +341,7 @@
 													value="${total + map.value.quantity * map.value.product.price}" />
 											</c:forEach>
 											<div class="total-result-in">
-												<span>$ ${total }</span>
+												<span><fmt:formatNumber value="${total}" /> VNĐ</span>
 
 											</div>
 										</li>
@@ -354,7 +355,7 @@
 										<li class="total-price">
 											<h4>Thành tiền:</h4>
 											<div class="total-result-in">
-												<span>$ ${total }</span>
+												<span><fmt:formatNumber value="${total}" /> VNĐ</span>
 
 											</div>
 										</li>
