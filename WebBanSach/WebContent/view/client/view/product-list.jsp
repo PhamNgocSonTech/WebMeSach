@@ -84,7 +84,7 @@
 				<div class="col-md-9">
 					<div class="row margin-bottom-5">
 						<div class="col-sm-4 result-category">
-							<h2>Men</h2>
+							<h2>Tìm kiếm</h2>
 							<small class="shop-bg-red badge-results">45 Results</small>
 						</div>
 						<div class="col-sm-8">

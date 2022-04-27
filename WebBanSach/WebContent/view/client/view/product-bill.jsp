@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -131,8 +132,8 @@
 
 														<td><img height="200" width="200" src="${imgUrl}" /></td>
 														<td>${pro.quantity }</td>
-														<td>${pro.unitPrice }</td>
-														<td>${pro.quantity * pro.unitPrice}</td>
+														<td><fmt:formatNumber value="${pro.unitPrice }" /> VNĐ </td>
+														<td><fmt:formatNumber value="${pro.quantity * pro.unitPrice}" /> VNĐ</td>
 														<td>${pro.cart.buyDate }</td>
 														<td><h4 style="color: green; font-weight: 500">Thanh toán thành công</h4></td>
 
