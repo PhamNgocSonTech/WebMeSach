@@ -1,17 +1,15 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
-	
-<c:url value="/view/admin/static" var="url"></c:url>
+    pageEncoding="UTF-8"%>
+    <c:url value="/view/admin/static" var="url"></c:url>
 <!DOCTYPE html>
 <html>
 <head>
-
 <script src="<c:url value="/ckeditor/ckeditor.js" />"></script>
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chỉnh sửa thể loại </title>
+<title>Edit User</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -23,7 +21,7 @@
 	rel='stylesheet' type='text/css' />
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
 		<jsp:include page="/view/admin/view/nav-bar.jsp"></jsp:include>
 		<!-- /. NAV TOP  -->
 		<jsp:include page="/view/admin/view/slide-bar.jsp"></jsp:include>
@@ -32,8 +30,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Chỉnh sửa thông tin thể loại</h2>
-						<h5>Chỉnh sửa lại thông tin thể loại hiện tại</h5>
+						<h2>--- THÊM MỚI NHÀ XUẤT BẢN ---</h2>
+						<h5>Thêm vào những nhà xuất bản uy tín</h5>
 					</div>
 				</div>
 				<!-- /. ROW  -->
@@ -42,18 +40,25 @@
 					<div class="col-md-12">
 						<!-- Form Elements -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Chỉnh sửa thông tin thể loại</div>
+							<div class="panel-heading">
+								<b>Thông tin nhà xuất bản</b>
+							</div>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<c:url value="/admin/category/edit" var="edit"></c:url>
-										<form role="form" action="${edit }" method="post">
-											<input name="id" value="${category.id }" hidden="">
+											<c:url value="/admin/publisher/add" var="add"></c:url>
+										<form role="form" action="${add}" method="post"
+											accept-charset="UTF-8">
 											<div class="form-group">
-												<label>Tên thể loại:</label> <input class="form-control"
-													value="${category.name}" name="name" />
+												<label>Tên nhà xuất bản:</label> <input class="form-control"
+													placeholder="Nhập tên nhà xuất bản" name="publisher_name" />
 											</div>
-											<button type="submit" class="btn btn-default">Edit</button>
+											<div>
+												<c:if test="${not empty error}">
+												<lable>${error}</lable>
+												</c:if>
+											</div>
+											<button type="submit" class="btn btn-default">Add</button>
 											<button type="reset" class="btn btn-primary">Reset</button>
 										</form>
 

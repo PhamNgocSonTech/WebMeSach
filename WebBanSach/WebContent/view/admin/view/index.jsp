@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Dashboard</title>
+<title>Admin</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- BOOTSTRAP STYLES-->
@@ -35,7 +35,7 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Admin Dashboard</h2>
+						<h2>Admin </h2>
 						<h5>Welcome : ${username}</h5>
 
 					</div>

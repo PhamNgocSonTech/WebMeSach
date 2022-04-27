@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <c:url value="/view/admin/static" var="url"></c:url>
 		<nav class="navbar-default navbar-side" role="navigation">
 			<div class="sidebar-collapse">
@@ -10,17 +10,17 @@
 
 
 					<li><a class="active-menu" href="#"><i
-							class="fa fa-dashboard fa-3x"></i> Dashboard</a></li>
+							class="fa fa-dashboard fa-3x"></i> Bảng quản lý</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/product/list"><i class="fa fa-desktop fa-3x"></i>
-							Product Management</a></li>
+							Quản lý sản phẩm</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/user/list"><i class="fa fa-qrcode fa-3x"></i>
-							USER Management</a></li>
+							 Quản lý người dùng</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/order/list"><i
-							class="fa fa-bar-chart-o fa-3x"></i> Order Management</a></li>
+							class="fa fa-bar-chart-o fa-3x"></i> Quản lý đặt hàng</a></li>
 					<li><a href="${pageContext.request.contextPath }/admin/category/list"><i class="fa fa-table fa-3x"></i>
-							Table Examples</a></li>
-					<li><a href="form.html"><i class="fa fa-edit fa-3x"></i>
-							Forms </a></li>
+							Quản lý thể loại</a></li>
+					<li><a href=${pageContext.request.contextPath}/admin/publisher/list><i class="fa fa-edit fa-3x"></i>
+							Quản lý nhà xuất bản </a></li>
 
 
 					<li><a href="#"><i class="fa fa-sitemap fa-3x"></i>

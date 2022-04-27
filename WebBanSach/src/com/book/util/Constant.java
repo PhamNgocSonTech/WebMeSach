@@ -10,7 +10,7 @@ public class Constant {
 		public static final String HOME = "/view/client/view/index.jsp";
 		public static final String DASHBOARD = "/view/admin/view/login.jsp";
 
-		public static final String ABSOLUTE_PROJECT_LOCATION = "D:\\Workspace\\CuoiKi\\WebBanSach\\WebContent"; // ĐỔI THÀNH ĐƯỜNG DẪN
+		public static final String ABSOLUTE_PROJECT_LOCATION = "D:\\studying\\Nam 3 HK2\\Lap trinh web\\bao cao cuoi ky\\WebMeSach\\WebBanSach\\WebContent"; // ĐỔI THÀNH ĐƯỜNG DẪN
 																									// CHỨA PROJECT TRÊN
 																									// MÁY
 

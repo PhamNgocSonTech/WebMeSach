@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -11,7 +12,7 @@
 <script src="<c:url value="/ckeditor/ckeditor.js" />"></script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chỉnh sửa thể loại </title>
+<title>Chỉnh sửa nhà xuất bản</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="${url}/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -32,8 +33,8 @@
 			<div id="page-inner">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Chỉnh sửa thông tin thể loại</h2>
-						<h5>Chỉnh sửa lại thông tin thể loại hiện tại</h5>
+						<h2>Chỉnh sửa thông tin nhà xuất bản</h2>
+						<h5>Chỉnh sửa lại thông tin nhà xuất bản</h5>
 					</div>
 				</div>
 				<!-- /. ROW  -->
@@ -42,16 +43,16 @@
 					<div class="col-md-12">
 						<!-- Form Elements -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Chỉnh sửa thông tin thể loại</div>
+							<div class="panel-heading">Chỉnh sửa thông tin nhà xuất bản</div>
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-6">
-										<c:url value="/admin/category/edit" var="edit"></c:url>
+										<c:url value="/admin/publisher/edit" var="edit"></c:url>
 										<form role="form" action="${edit }" method="post">
-											<input name="id" value="${category.id }" hidden="">
+											<input name="id" value="${publisher.publisher_id }" hidden="">
 											<div class="form-group">
-												<label>Tên thể loại:</label> <input class="form-control"
-													value="${category.name}" name="name" />
+												<label>Tên nhà xuất bản:</label> <input class="form-control"
+													value="${publisher.publisher_name}" name="name" />
 											</div>
 											<button type="submit" class="btn btn-default">Edit</button>
 											<button type="reset" class="btn btn-primary">Reset</button>
