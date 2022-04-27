@@ -89,8 +89,6 @@
 
 
 													<td><a
-														href="<c:url value='/admin/order/edit?id=${list.id }'/>"
-														class="center">Sửa</a> | <a
 														href="<c:url value='/admin/order/delete?id=${list.id }'/>"
 														class="center">Xóa</a></td>
 

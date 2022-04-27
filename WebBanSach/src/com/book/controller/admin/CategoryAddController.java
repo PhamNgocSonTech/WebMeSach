@@ -31,12 +31,12 @@ public class CategoryAddController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/admin/view/add-category.jsp");
 		dispatcher.forward(req, resp);
-		
-	
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html;charset=UTF-8");
+		req.setCharacterEncoding("UTF-8");
 		String name = req.getParameter("name");
 		
 	

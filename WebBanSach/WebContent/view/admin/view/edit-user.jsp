@@ -73,6 +73,8 @@
 											<div class="form-group">
 												<label>Hình ảnh</label> <input type="file"
 													name="avatar" />
+													
+													<input name="old-avt" value="${user.avatar}" hidden="">
 											</div>
 											<button type="submit" class="btn btn-default">Sửa</button>
 											<button type="reset" class="btn btn-primary">Đặt lại</button>

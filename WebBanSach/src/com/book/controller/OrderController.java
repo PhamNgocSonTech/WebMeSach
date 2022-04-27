@@ -112,7 +112,8 @@ public class OrderController extends HttpServlet {
 	         +  "<td>" + currencyVN.format(cartItem.getQuantity() * cartItem.getUnitPrice()) +  "</td>\r\n"
              +  "<tr>\r\n";
 		}
-        val += "<h4 style=\"color: red;\">Tổng cộng: " + currencyVN.format(total) + "</h4>\n";
+        
+        val += "<h4 style=\"color: red;\">Tổng cộng: " + currencyVN.format(total) + " (Đã thanh toán)" + "</h4>\n";
         return val;
 	}
 }

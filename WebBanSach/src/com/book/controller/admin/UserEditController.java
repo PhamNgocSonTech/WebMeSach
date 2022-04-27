@@ -19,6 +19,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import com.book.model.User;
 import com.book.service.UserService;
 import com.book.service.impl.UserServiceImpl;
+import com.book.util.Constant;
 
 @WebServlet(urlPatterns = { "/admin/user/edit" })
 public class UserEditController extends HttpServlet {
@@ -39,6 +40,7 @@ public class UserEditController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		User user = new User();
+		String old_avt = null;
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
 		
@@ -49,6 +51,8 @@ public class UserEditController extends HttpServlet {
 			for (FileItem item : items) {
 				if (item.getFieldName().equals("id")) {
 					user.setId(Integer.parseInt(item.getString()));
+				} else if (item.getFieldName().equals("old-avt")) {
+					old_avt = item.getString();
 				} else if (item.getFieldName().equals("email")) {
 					user.setEmail(item.getString());
 				} else if (item.getFieldName().equals("username")) {
@@ -59,7 +63,7 @@ public class UserEditController extends HttpServlet {
 					user.setRoleId(Integer.parseInt(item.getString()));
 				} else if (item.getFieldName().equals("avatar")) {
 					if (item.getSize() > 0) {// neu co file d
-						final String dir = "F:\\upload";
+						final String dir = Constant.Path.ABSOLUTE_PROJECT_LOCATION + "/view/client/static/img/clients/";
 						String originalFileName = item.getName();
 						int index = originalFileName.lastIndexOf(".");
 						String ext = originalFileName.substring(index + 1);
@@ -73,6 +77,13 @@ public class UserEditController extends HttpServlet {
 					}
 				}
 			}
+			
+			if (user.getAvatar() == null) {
+				user.setAvatar(old_avt);
+			}
+			
+			User oldUser = userService.get(user.getId());
+			user.setName(oldUser.getName());
 
 			userService.edit(user);
 

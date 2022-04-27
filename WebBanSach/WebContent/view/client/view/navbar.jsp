@@ -55,15 +55,16 @@
                                                 <div class="col-md-2 col-sm-6">
                                                     <h3 class="mega-menu-heading">Văn học</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Trinh thám</a><span class="label label-danger-shop">Best Seller</span></li>
-                                                        <li><a href="#">Tiểu thuyết</a></li>
-                                                        <li><a href="#">Ngôn tình</a> 
-                                                        <li><a href="#">Light Novel</a></li>
-                                                        <li><a href="#">Du ký</a></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=5">Truyện ngắn</a><span class="label label-danger-shop">Best Seller</span></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=4">Tiểu thuyết</a></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=7">Ngôn tình</a> 
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=20">Kinh dị</a>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=6">Light Novel</a></li>
+                                                       
                                                     </ul>
                                                     <h3 class="mega-menu-heading">Tâm lí - kỹ năng</h3>
                                                     <ul class="list-unstyled style-list">
-                                                        <li><a href="#">Kỹ năng sống</a><span class="label label-danger-shop">New</span></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=9">Quản trị & Lãnh đạo</a><span class="label label-danger-shop">New</span></li>
                                                         <li><a href="#">Sách cho tuổi mới lớn</a></li>
                                                         <li><a href="#">Tâm lý</a></li>
                                                         <li><a href="#">Rèn luyện nhân cách</a></li>
@@ -76,7 +77,7 @@
                                                         <li><a href="#">Truyện thiếu nhi</a></li>
                                                         <li><a href="#">Kiến thức bách khoa</a><span class="label label-danger-shop">New</span></li>
                                                         <li><a href="#">Tạp chí thiếu nhi</a></li>
-                                                        <li><a href="#">Manga - Comic</a></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=8">Manga - Comic</a></li>
                                                     </ul>
                                                     <h3 class="mega-menu-heading">Tiểu sử - Hồi ký</h3>
                                                     <ul class="list-unstyled style-list">
@@ -121,7 +122,7 @@
                                                     <h3 class="mega-menu-heading">Ngoại văn</h3>
                                                     <ul class="list-unstyled style-list">
                                                         <li><a href="#">Dictionaries & Language</a> <span class="label label-danger-shop">New</span></li>
-                                                        <li><a href="#">Business & Management</a></li>
+                                                        <li><a href="${pageContext.request.contextPath }/product/category?cate_id=10">Business & Management</a></li>
                                                         <li><a href="#">Biography</a></li>
                                                     </ul>
                                                 </div>

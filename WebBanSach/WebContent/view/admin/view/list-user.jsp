@@ -52,7 +52,7 @@
 							
 							<a href="${pageContext.request.contextPath }/admin/user/add"
 								class="btn btn-primary btn-block text-uppercase mb-3"
-								style="width: 170px; margin: 10px 10px 0px 10px; display: inline-block;">Thêm người dùng mới</a>
+								style="width: 170px; display: inline-block;">Thêm người dùng mới</a>
 								
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
@@ -83,7 +83,7 @@
 													<td class="center">Active</td>
 
 													<td class="center"><c:choose>
-															<c:when test="${list.roleId ==1 }">
+															<c:when test="${list.roleId eq 1 }">
 													Admin
 													</c:when>
 															<c:otherwise>Client</c:otherwise>

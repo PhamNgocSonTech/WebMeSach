@@ -52,9 +52,6 @@
 							<a href="${pageContext.request.contextPath }/admin/publisher/add"
 								class="btn btn-primary btn-block text-uppercase mb-3"
 								style="width: 170px; margin: 10px 10px 0 10px; display: inline-block;">Thêm nhà xuất bản mới</a>
-								<a href="${pageContext.request.contextPath}/export-excel"
-								class="btn btn-primary btn-block text-uppercase mb-3"
-								style="width: 170px; margin: 10px 10px 0 10px; display: inline-block;">Xuất File Excel</a>
 							<div class="panel-body">
 								<div class="table-responsive">
 									<table class="table table-striped table-bordered table-hover"
