@@ -7,4 +7,4 @@
 
 5. --THÔNG TIN ĐĂNG NHẬP HỆ THỐNG WEB MESACH--
 6. Tài khoản Admin -> Username: admin, Password: admin
-7. Tài khoản khách hàng -> Username: client, Password: client
+7. Tài khoản khách hàng -> Username: client, Password: client.
